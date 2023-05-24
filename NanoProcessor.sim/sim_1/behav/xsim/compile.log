@@ -1,6 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/FA.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity FA
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/HA.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity HA
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/FA_Sim.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity FA_Sim
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Decoder_3_to_8.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Decoder_3_to_8
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Decoder_3_to_8_Sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Decoder_3_to_8_Sim
