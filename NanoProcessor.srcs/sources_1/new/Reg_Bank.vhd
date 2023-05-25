@@ -86,6 +86,7 @@ begin
             En => Decoder_Y(0),
             Q => R0
         );
+    
         
     Reg_1 : Reg 
         PORT MAP(
