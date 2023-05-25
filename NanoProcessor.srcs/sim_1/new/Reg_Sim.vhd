@@ -41,12 +41,13 @@ architecture Behavioral of Reg_Sim is
         PORT (
             Clk : in STD_LOGIC;
             En : in STD_LOGIC;
+            Rst : in STD_LOGIC;
             D : in STD_LOGIC_VECTOR(3 downto 0);
             Q : out STD_LOGIC_VECTOR(3 downto 0)
         );
     End Component;
     
-    SIGNAL Clk, En : STD_LOGIC;
+    SIGNAL Clk, En, Rst : STD_LOGIC;
     SIGNAL D : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL Q : STD_LOGIC_VECTOR(3 downto 0);
     
@@ -54,6 +55,7 @@ begin
     
     UUT : Reg PORT MAP (
         Clk => Clk,
+        Rst => Rst,
         En => En,
         D => D,
         Q => Q
@@ -84,6 +86,13 @@ begin
         wait for 10ns;
         
         D <= "0110";
+        wait for 10ns;
+        
+        -- reset the register
+        Rst <= '1';
+        wait for 10ns;
+        
+        D <= "1110";
         wait for 10ns;
         
         wait; -- wait forever

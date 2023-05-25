@@ -41,17 +41,19 @@ architecture Behavioral of D_FF_Sim is
         PORT (
             Clk : in STD_LOGIC;
             En : in STD_LOGIC;
+            Rst : in STD_LOGIC;
             D : in STD_LOGIC;
             Q : out STD_LOGIC
         );
     End Component;
     
-    SIGNAL Clk, En, D : STD_LOGIC;
+    SIGNAL Clk, En, Rst, D : STD_LOGIC;
     SIGNAL Q : STD_LOGIC;
 begin
 
     UUT : D_FF PORT MAP (
         Clk => Clk,
+        Rst => Rst,
         En => En,
         D => D,
         Q => Q
@@ -81,6 +83,16 @@ begin
         wait for 10ns;
         
         D <= '0';
+        wait for 10ns;
+        
+        D <= '1';
+        wait for 10ns;
+        
+        -- reset the flip flop
+        Rst <= '1';
+        wait for 10ns;
+        
+        D <= '1';
         wait for 10ns;
         
         wait; -- wait forever

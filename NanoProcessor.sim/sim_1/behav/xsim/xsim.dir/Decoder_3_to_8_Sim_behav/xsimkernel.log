@@ -2,3 +2,6 @@ Running: xsim.dir/Decoder_3_to_8_Sim_behav/xsimk.exe -simmode gui -wdb Decoder_3
 Design successfully loaded
 Design Loading Memory Usage: 6284 KB (Peak: 6284 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6796 KB (Peak: 6796 KB)
+Simulation CPU Usage: 0 ms

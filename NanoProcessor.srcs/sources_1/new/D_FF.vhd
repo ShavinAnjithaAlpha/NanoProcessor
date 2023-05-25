@@ -34,6 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity D_FF is
     Port ( Clk : in STD_LOGIC;
            D : in STD_LOGIC;
+           Rst : in STD_LOGIC;
            En : in STD_LOGIC;
            Q : out STD_LOGIC);
 end D_FF;
@@ -42,11 +43,13 @@ architecture Behavioral of D_FF is
 
 begin
 
-    process (Clk) begin -- procss begin when clock changes
-        if (rising_edge(Clk)) then  -- respond at clock rising edge
+    process (Clk, Rst) begin -- procss begin when clock changes
+        if Rst'event AND Rst = '1' then Q <= '0'; -- reset the D flip-flop asynchronously
+        else if (rising_edge(Clk)) then  -- respond at clock rising edge
             if En = '1' then -- store D if En is asserted
                 Q <= D;
              end if;
+         end if;
          end if;
     end process;
 

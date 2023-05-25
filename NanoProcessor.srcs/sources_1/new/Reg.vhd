@@ -34,6 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Reg is
     Port ( Clk : in STD_LOGIC;
            En : in STD_LOGIC;
+           Rst : in STD_LOGIC;
            D : in STD_LOGIC_VECTOR (3 downto 0);
            Q : out STD_LOGIC_VECTOR (3 downto 0));
 end Reg;
@@ -41,13 +42,14 @@ end Reg;
 architecture Behavioral of Reg is
 
 begin
-
-    process (Clk) begin
     
-        if (rising_edge(Clk)) then -- respont at the rising edge of the clock pulse
+    process (Clk, Rst) begin
+        if Rst'event AND Rst = '1' then Q <= "0000"; -- reset the register asynchronously
+        else if (rising_edge(Clk)) then -- respont at the rising edge of the clock pulse
             if En = '1' then -- store the 4-bit fi En is asserted
                 Q <= D;
             end if;
+        end if;
         end if;
     
     end process;
