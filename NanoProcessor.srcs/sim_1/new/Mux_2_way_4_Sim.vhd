@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 05/25/2023 03:57:18 PM
--- Design Name: 
+-- Design Name: 2-way 4-bit Multiplexer
 -- Module Name: Mux_2_way_4_Sim - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: NanoProcessor
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 

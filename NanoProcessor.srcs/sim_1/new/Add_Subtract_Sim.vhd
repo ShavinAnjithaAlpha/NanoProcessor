@@ -47,53 +47,53 @@ component Add_Subtract
     );
 end component;
 
-signal A_in, B_in, S_out: std_logic_vector(3 downto 0);
-signal M, v, C_out: std_logic;
+    signal A_in, B_in, S_out: std_logic_vector(3 downto 0);
+    signal M, v, C_out: std_logic;
 
 begin
 
-UUT : Add_Subtract
-    port map(
-        A_in => A_in,
-        B_in => B_in,
-        M => M,
-        S_out => S_out,
-        V => V,
-        C_out => C_out
-    );
+    UUT : Add_Subtract
+        port map(
+            A_in => A_in,
+            B_in => B_in,
+            M => M,
+            S_out => S_out,
+            V => V,
+            C_out => C_out
+        );
 
-process
-begin
-    M <= '0';
+    process
+    begin
+        M <= '0';
     
-    A_in <= "0000";
-    B_in <= "0000";
-    wait for 10ns;
+        A_in <= "0000";
+        B_in <= "0000";
+        wait for 10ns;
+        
+        A_in <= "0001";
+        B_in <= "0001";
+        wait for 10ns;
+        
+        A_in <= "0010";
+        B_in <= "0010";
+        wait for 10ns;    
+        
+        A_in <= "0100";
+        B_in <= "0100";
+        wait for 10ns;    
+        
+        A_in <= "0100";
+        B_in <= "0100";
+        wait for 10ns;    
+        
+        A_in <= "0110";
+        B_in <= "1100";
+        wait for 10ns;    
+        
+        A_in <= "0111";
+        B_in <= "1000";
+        wait for 10ns;
     
-    A_in <= "0001";
-    B_in <= "0001";
-    wait for 10ns;
     
-    A_in <= "0010";
-    B_in <= "0010";
-    wait for 10ns;    
-    
-    A_in <= "0100";
-    B_in <= "0100";
-    wait for 10ns;    
-    
-    A_in <= "0100";
-    B_in <= "0100";
-    wait for 10ns;    
-    
-    A_in <= "0110";
-    B_in <= "1100";
-    wait for 10ns;    
-    
-    A_in <= "0111";
-    B_in <= "1000";
-    wait for 10ns;
-    
-    
-end process;
+    end process;
 end Behavioral;

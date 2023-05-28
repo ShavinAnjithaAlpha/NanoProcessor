@@ -2,3 +2,6 @@ Running: xsim.dir/Reg_Bank_Sim_behav/xsimk.exe -simmode gui -wdb Reg_Bank_Sim_be
 Design successfully loaded
 Design Loading Memory Usage: 5844 KB (Peak: 5844 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 6360 KB (Peak: 6360 KB)
+Simulation CPU Usage: 46 ms

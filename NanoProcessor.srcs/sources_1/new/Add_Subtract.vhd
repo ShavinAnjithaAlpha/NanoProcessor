@@ -50,7 +50,7 @@ component FA
         C_out : out STD_LOGIC);
 end component;
 
-signal FA_C_out, B_in_temp : std_logic_vector(3 downto 0);
+    signal FA_C_out, B_in_temp : std_logic_vector(3 downto 0);
 
 begin
     B_in_temp(0) <= B_in(0) XOR M;
@@ -58,37 +58,37 @@ begin
     B_in_temp(2) <= B_in(2) XOR M;
     B_in_temp(3) <= B_in(3) XOR M;
     
-FA_0: FA
-    port map(
-        A => A_in(0),
-        B => B_in_temp(0),
-        C_in => M,
-        S => S_out(0),
-        C_out => FA_C_out(0));
-        
-FA_1: FA
-    port map(
-        A => A_in(1),
-        B => B_in_temp(1),
-        C_in => FA_C_out(0),
-        S => S_out(1),
-        C_out => FA_C_out(1));
-                
-FA_2: FA
-    port map(
-        A => A_in(2),
-        B => B_in_temp(2),
-        C_in => FA_C_out(1),
-        S => S_out(2),
-        C_out => FA_C_out(2));
-        
-FA_3: FA
-    port map(
-        A => A_in(3),
-        B => B_in_temp(3),
-        C_in => FA_C_out(2),
-        S => S_out(3),
-        C_out => FA_C_out(3));
+    FA_0: FA
+        port map(
+            A => A_in(0),
+            B => B_in_temp(0),
+            C_in => M,
+            S => S_out(0),
+            C_out => FA_C_out(0));
+            
+    FA_1: FA
+        port map(
+            A => A_in(1),
+            B => B_in_temp(1),
+            C_in => FA_C_out(0),
+            S => S_out(1),
+            C_out => FA_C_out(1));
+                    
+    FA_2: FA
+        port map(
+            A => A_in(2),
+            B => B_in_temp(2),
+            C_in => FA_C_out(1),
+            S => S_out(2),
+            C_out => FA_C_out(2));
+            
+    FA_3: FA
+        port map(
+            A => A_in(3),
+            B => B_in_temp(3),
+            C_in => FA_C_out(2),
+            S => S_out(3),
+            C_out => FA_C_out(3));
         
     C_out <= FA_C_out(3);
     V <= FA_C_out(3) XOR FA_C_out(2);

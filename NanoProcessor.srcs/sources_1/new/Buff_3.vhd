@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 05/25/2023 03:40:26 PM
--- Design Name: 
+-- Design Name: 3-bit tri-state-buffer
 -- Module Name: Buff_3 - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: NanoProcessor
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 

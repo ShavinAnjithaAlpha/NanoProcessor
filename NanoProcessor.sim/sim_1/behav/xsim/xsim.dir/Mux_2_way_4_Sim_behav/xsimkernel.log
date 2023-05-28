@@ -2,3 +2,6 @@ Running: xsim.dir/Mux_2_way_4_Sim_behav/xsimk.exe -simmode gui -wdb Mux_2_way_4_
 Design successfully loaded
 Design Loading Memory Usage: 6264 KB (Peak: 6264 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6788 KB (Peak: 6788 KB)
+Simulation CPU Usage: 0 ms

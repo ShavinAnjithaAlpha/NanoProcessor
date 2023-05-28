@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 05/25/2023 11:01:55 AM
--- Design Name: 
+-- Design Name: Register Bank Simulation
 -- Module Name: Reg_Bank_Sim - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: NanoProcessor
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 
