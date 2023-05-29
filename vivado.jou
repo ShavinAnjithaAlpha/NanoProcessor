@@ -2,33 +2,26 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon May 29 00:36:42 2023
-# Process ID: 14816
-# Current directory: D:/Projects/NanoProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10244 D:\Projects\NanoProcessor\NanoProcessor.xpr
-# Log file: D:/Projects/NanoProcessor/vivado.log
-# Journal file: D:/Projects/NanoProcessor\vivado.jou
+# Start of session at: Mon May 29 09:33:48 2023
+# Process ID: 18824
+# Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12476 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
+# Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/vivado.log
+# Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
+open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}
 update_compile_order -fileset sources_1
-add_files -norecurse D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Subtract.vhd
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Adder_3.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Adder_3.vhd}}
 update_compile_order -fileset sources_1
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Counter.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Counter.vhd}}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Count_3.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Count_3.vhd}}
 update_compile_order -fileset sources_1
 set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Ins_Decoder_Sim.vhd w ]
-add_files -fileset sim_1 D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Ins_Decoder_Sim.vhd
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Adder_3_Sim.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Adder_3_Sim.vhd}}
 update_compile_order -fileset sim_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Ins_Decoder_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-source Ins_Decoder_Sim.tcl
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Subtract_Sim.vhd
-update_compile_order -fileset sim_1
-close_sim
