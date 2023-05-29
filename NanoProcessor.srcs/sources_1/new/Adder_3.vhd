@@ -69,7 +69,7 @@ FA_1 : FA
     
 FA_2 : FA
     port map(
-        A => A_in(1),
+        A => A_in(2),
         B => '0',
         S =>  S_out(2),
         C_in => FA_C_out(1),

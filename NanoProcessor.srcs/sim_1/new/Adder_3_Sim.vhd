@@ -37,7 +37,47 @@ end Adder_3_Sim;
 
 architecture Behavioral of Adder_3_Sim is
 
+component Adder_3
+    port(
+        A_in : in STD_LOGIC_VECTOR (2 downto 0);
+        S_out : out STD_LOGIC_VECTOR (2 downto 0));
+end component;
+
+signal A_in, S_out : std_logic_vector(2 downto 0);
+
 begin
 
+UUT : Adder_3
+    port map(
+        A_in => A_in,
+        S_out => S_out);
 
+process
+begin
+    
+    A_in <= "000";
+    wait for 10ns;
+    
+    A_in <= "001";
+    wait for 10ns;
+        
+    A_in <= "010";
+    wait for 10ns;
+    
+    A_in <= "011";
+    wait for 10ns;
+        
+    A_in <= "100";
+    wait for 10ns;
+    
+    A_in <= "101";
+    wait for 10ns; 
+           
+    A_in <= "110";
+    wait for 10ns;
+    
+    A_in <= "111";
+    wait;
+    
+end process;
 end Behavioral;

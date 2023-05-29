@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Ins_Decoder.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Ins_Decoder
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Ins_Decoder_Sim.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Ins_Decoder_Sim
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Adder_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Adder_3
