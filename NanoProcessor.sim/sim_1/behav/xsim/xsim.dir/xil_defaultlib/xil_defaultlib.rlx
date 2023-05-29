@@ -2,14 +2,9 @@
 2018.2
 Jun 14 2018
 20:41:02
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Adder_3_Sim.vhd,1685336851,vhdl,,,,adder_3_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Count_3_Sim.vhd,1685356009,vhdl,,,,count_3_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/LUT_7_Display_Sim.vhd,1685373722,vhdl,,,,lut_7_display_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Slow_Clk_Sim.vhd,1685356127,vhdl,,,,slow_clk_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Adder_3.vhd,1685337137,vhdl,,,,adder_3,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Count_3.vhd,1685372537,vhdl,,,,count_3,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/D_FF.vhd,1685296227,vhdl,,,,d_ff,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/FA.vhd,1685296227,vhdl,,,,fa,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/HA.vhd,1685296227,vhdl,,,,ha,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/LUT_7_Display.vhd,1685373268,vhdl,,,,lut_7_display,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Slow_Clk.vhd,1685372558,vhdl,,,,slow_clk,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Count_3_Sim.vhd,1685380452,vhdl,,,,count_3_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/LUT_7_Display_Sim.vhd,1685380452,vhdl,,,,lut_7_display_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Count_3.vhd,1685380452,vhdl,,,,count_3,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/D_FF.vhd,1684993652,vhdl,,,,d_ff,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/LUT_7_Display.vhd,1685380452,vhdl,,,,lut_7_display,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Slow_Clk.vhd,1685380452,vhdl,,,,slow_clk,,,,,,,,

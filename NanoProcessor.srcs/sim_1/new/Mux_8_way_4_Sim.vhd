@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 05/25/2023 03:22:32 PM
--- Design Name: 
+-- Design Name: 8 way 4-bit Multiplexer Simulation
 -- Module Name: Mux_8_way_4_Sim - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: NanoProcessor
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 

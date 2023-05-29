@@ -33,8 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Mux_2_way_4 is
     Port ( I : in STD_LOGIC;
-           A0 : in STD_LOGIC_VECTOR (3 downto 0);
-           A1 : in STD_LOGIC_VECTOR (3 downto 0);
+           A0, A1 : in STD_LOGIC_VECTOR (3 downto 0);
            Y : out STD_LOGIC_VECTOR (3 downto 0));
 end Mux_2_way_4;
 
