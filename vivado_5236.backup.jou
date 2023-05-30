@@ -2,12 +2,12 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue May 30 14:50:52 2023
-# Process ID: 3940
+# Start of session at: Tue May 30 13:49:07 2023
+# Process ID: 5236
 # Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18408 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5640 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
 # Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/vivado.log
 # Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor\vivado.jou
 #-----------------------------------------------------------
-start_gui
-open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}
+sstart_guioopen_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}update_compile_order -fileset sources_1
+
