@@ -134,6 +134,14 @@ architecture Behavioral of Processor is
     -- all the intermediate signals 
     SIGNAL ins : STD_LOGIC_VECTOR(11 downto 0);
     SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
+    SIGNAL reg_bus : STD_LOGIC_VECTOR(3 downto 0);
+    
+    -- ALU signals
+    SIGNAL alu_out : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL mux_1, mux_2 : STD_LOGIC_VECTOR(3 downto 0);
+    
+    -- Register outputs signals
+    SIGNAL R0, R1, R2, R3, R4, R5, R6, R7 : STD_LOGIC_VECTOR(3 downto 0);
     
     -- all the instruction decoder intermediate signals
     SIGNAL jmp_flag, load_sel, add_sub_sel : STD_LOGIC;
@@ -166,8 +174,8 @@ begin
         );
         
    -- create a 2-way 3-bit mux for select on of the incoming address
-   Addr_Sel : Mux_2_way_3
-    PORT MAP(
+    Addr_Sel : Mux_2_way_3
+       PORT MAP(
         I => jmp_flag,
         A0 => adder_3_out,
         A1 => jmp_addr,
@@ -188,5 +196,76 @@ begin
           jmp => jmp_flag,
           jmp_addr => jmp_addr  
         );
+        
+    -- create the 2-way 4-bit mux for select the value from either ALU or immediate value
+    Val_Sel : Mux_2_way_4
+        PORT MAP(
+            I => load_sel,
+            A0 => alu_out,
+            A1 => im_val,
+            Y => reg_bus
+        );
+        
+    -- create register bank for the processor
+    Reg_Bank_0 : Reg_Bank 
+        PORT MAP(
+            I => reg_bus,
+            Clk => Clk,
+            Rst => Rst,
+            Reg_En => reg_enb,
+            R0 => R0,
+            R1 => R1,
+            R2 => R2,
+            R3 => R3,
+            R4 => R4,
+            R5 => R5,
+            R6 => R6,
+            R7 => R7
+        );
+        
+    R7_out <= R7;
+    
+    -- create ALU part of the processor
+    Add_Subtract_0 : Add_Subtract 
+        PORT MAP(
+            A_in => mux_2,
+            B_in => mux_1,
+            S_out => alu_out,
+            M => add_sub_sel,
+            C_out => Carry,
+            V => Zeroes 
+        );
+        
+    jmp_check <= mux_2;
+    
+    -- create ALU values selecter multiplexers
+    ALU_Mux_1 : Mux_8_way_4 
+        PORT MAP(
+            Reg_Sel => reg_sel_1,
+            A0 => R0,
+            A1 => R1,
+            A2 => R2,
+            A3 => R3, 
+            A4 => R4,
+            A5 => R5,
+            A6 => R6,
+            A7 => R7,
+            Y => mux_1
+        );
+    
+    ALU_Mux_2 : Mux_8_way_4
+        PORT MAP(
+            Reg_Sel => reg_sel_2,
+            A0 => R0,
+            A1 => R1,
+            A2 => R2,
+            A3 => R3, 
+            A4 => R4,
+            A5 => R5,
+            A6 => R6,
+            A7 => R7,
+            Y => mux_2
+        );
+    
 
 end Behavioral;
