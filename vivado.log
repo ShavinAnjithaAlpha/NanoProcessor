@@ -20,3 +20,10 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
 open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 874.805 ; gain = 131.559
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Processor_Sim.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Processor_Sim.vhd}}
+update_compile_order -fileset sim_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 30 15:17:40 2023...

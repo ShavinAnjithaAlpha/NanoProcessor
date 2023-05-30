@@ -36,8 +36,8 @@ entity Add_Subtract_Sim is
 end Add_Subtract_Sim;
 
 architecture Behavioral of Add_Subtract_Sim is
-component Add_Subtract
-    port(
+Component Add_Subtract
+    PORT(
         A_in : in STD_LOGIC_VECTOR (3 downto 0);
         B_in : in STD_LOGIC_VECTOR (3 downto 0);
         S_out : out STD_LOGIC_VECTOR (3 downto 0);
@@ -45,15 +45,15 @@ component Add_Subtract
         C_out : out STD_LOGIC;
         V : out STD_LOGIC
     );
-end component;
+End Component;
 
-    signal A_in, B_in, S_out: std_logic_vector(3 downto 0);
-    signal M, v, C_out: std_logic;
+    SIGNAL A_in, B_in, S_out: STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL M, v, C_out: STD_LOGIC;
 
 begin
 
     UUT : Add_Subtract
-        port map(
+        PORT MAP(
             A_in => A_in,
             B_in => B_in,
             M => M,

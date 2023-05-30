@@ -41,16 +41,16 @@ entity Add_Subtract is
 end Add_Subtract;
 
 architecture Behavioral of Add_Subtract is
-component FA
-    port(
+Component FA
+    PORT(
         A : in STD_LOGIC;
         B : in STD_LOGIC;
         C_in : in STD_LOGIC;
         S : out STD_LOGIC;
         C_out : out STD_LOGIC);
-end component;
+End Component;
 
-    signal FA_C_out, B_in_temp : std_logic_vector(3 downto 0);
+    SIGNAL FA_C_out, B_in_temp : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
     B_in_temp(0) <= B_in(0) XOR M;
@@ -59,7 +59,7 @@ begin
     B_in_temp(3) <= B_in(3) XOR M;
     
     FA_0: FA
-        port map(
+        PORT MAP(
             A => A_in(0),
             B => B_in_temp(0),
             C_in => M,
@@ -67,7 +67,7 @@ begin
             C_out => FA_C_out(0));
             
     FA_1: FA
-        port map(
+        PORT MAP(
             A => A_in(1),
             B => B_in_temp(1),
             C_in => FA_C_out(0),
@@ -75,7 +75,7 @@ begin
             C_out => FA_C_out(1));
                     
     FA_2: FA
-        port map(
+        PORT MAP(
             A => A_in(2),
             B => B_in_temp(2),
             C_in => FA_C_out(1),
@@ -83,7 +83,7 @@ begin
             C_out => FA_C_out(2));
             
     FA_3: FA
-        port map(
+        PORT MAP(
             A => A_in(3),
             B => B_in_temp(3),
             C_in => FA_C_out(2),

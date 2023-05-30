@@ -36,71 +36,71 @@ entity LUT_7_Display_Sim is
 end LUT_7_Display_Sim;
 
 architecture Behavioral of LUT_7_Display_Sim is
-component LUT_7_Display 
-    port(
+Component LUT_7_Display 
+    PORT(
         address : in STD_LOGIC_VECTOR (3 downto 0);
         data : out STD_LOGIC_VECTOR (6 downto 0));
-end component;
+End Component;
 
-signal d : std_logic_vector(6 downto 0);
-signal a : std_logic_vector(3 downto 0);
+    SIGNAL d : STD_LOGIC_VECTOR(6 downto 0);
+    SIGNAL a : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
-UUT : LUT_7_Display
-port map(
-    data => d,
-    address => a);
+    UUT : LUT_7_Display
+    PORT MAP(
+        data => d,
+        address => a);
 
-process
-begin 
-    a <= "0000";
-    wait for 10ns;
-    
-    a <= "0001";
-    wait for 10ns;
-    
-    a <= "0010";
-    wait for 10ns;
-    
-    a <= "0011";
-    wait for 10ns;
-    
-    a <= "0100";
-    wait for 10ns;
-    
-    a <= "0101";
-    wait for 10ns;
-    
-    a <= "0110";
-    wait for 10ns;
-    
-    a <= "0111";
-    wait for 10ns;
-    
-    a <= "1000";
-    wait for 10ns;
-    
-    a <= "1001";
-    wait for 10ns;
-    
-    a <= "1010";
-    wait for 10ns;
-    
-    a <= "1011";
-    wait for 10ns;
-    
-    a <= "1100";
-    wait for 10ns;
-    
-    a <= "1101";
-    wait for 10ns;
-    
-    a <= "1110";
-    wait for 10ns;
-    
-    a <= "1111";
-    wait;
-    
-end process;
+    process
+    begin 
+        a <= "0000";
+        wait for 10ns;
+        
+        a <= "0001";
+        wait for 10ns;
+        
+        a <= "0010";
+        wait for 10ns;
+        
+        a <= "0011";
+        wait for 10ns;
+        
+        a <= "0100";
+        wait for 10ns;
+        
+        a <= "0101";
+        wait for 10ns;
+        
+        a <= "0110";
+        wait for 10ns;
+        
+        a <= "0111";
+        wait for 10ns;
+        
+        a <= "1000";
+        wait for 10ns;
+        
+        a <= "1001";
+        wait for 10ns;
+        
+        a <= "1010";
+        wait for 10ns;
+        
+        a <= "1011";
+        wait for 10ns;
+        
+        a <= "1100";
+        wait for 10ns;
+        
+        a <= "1101";
+        wait for 10ns;
+        
+        a <= "1110";
+        wait for 10ns;
+        
+        a <= "1111";
+        wait;
+        
+    end process;
 end Behavioral;
 

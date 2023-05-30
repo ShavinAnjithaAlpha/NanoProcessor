@@ -36,95 +36,95 @@ entity Count_3_Sim is
 end Count_3_Sim;
 
 architecture Behavioral of Count_3_Sim is
-component Count_3
-    port(
+Component Count_3
+    PORT(
         Clk : in STD_LOGIC;
         rst : in STD_LOGIC;
         Add_in : in STD_LOGIC_VECTOR (2 downto 0);
         Add_out : out STD_LOGIC_VECTOR (2 downto 0));
-end component;
+End Component;
 
-signal Add_in, Add_out : std_logic_vector(2 downto 0);
-signal rst, Clk : STD_LOGIC := '0';
+    SIGNAL Add_in, Add_out : STD_LOGIC_VECTOR(2 downto 0);
+    SIGNAL rst, Clk : STD_LOGIC := '0';
 
 begin
-UUT : Count_3 PORT MAP(
-    Add_in => Add_in,
-    rst => rst,
-    Clk => Clk,
-    Add_out => Add_out);
-    
--- generating clock pulse is separate process
-clock_process: process
-    begin
-        Clk <= '0';
-        WAIT FOR 5 ns;
-        Clk <= '1';
-        WAIT FOR 5 ns;
-    end process;
+    UUT : Count_3 PORT MAP(
+        Add_in => Add_in,
+        rst => rst,
+        Clk => Clk,
+        Add_out => Add_out);
         
-counter_process: process
-    begin
-        -- rst = 0 means output will  be same as input otherwise output will be 000
-        rst <= '0';
-        Add_in <= "000";
-        wait for 10ns;
-        
-        Add_in <= "001";
-        wait for 10ns;
-        
-        Add_in <= "010";
-        wait for 10ns;
-        
-        Add_in <= "011";
-        wait for 10ns;
-        
-        Add_in <= "100";
-        wait for 10ns;
-        
-        Add_in <= "101";
-        wait for 10ns;
-        
-        Add_in <= "110";
-        wait for 10ns;
-        
-        Add_in <= "111";
-        wait for 10ns;
-        
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "000";
-        wait for 10ns;
-        
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "001";
-        wait for 10ns;
-                
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "010";
-        wait for 10ns;
-        
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "011";
-        wait for 10ns;
-                
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "100";
-        wait for 10ns;
-        
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "101";
-        wait for 10ns; 
-               
-        rst <= '1';
-        wait for 10ns;
-        Add_in <= "111";
-        wait;
-        
-    end process;
+    -- generating clock pulse is separate process
+    clock_process: process
+        begin
+            Clk <= '0';
+            WAIT FOR 5 ns;
+            Clk <= '1';
+            WAIT FOR 5 ns;
+        end process;
+            
+    counter_process: process
+        begin
+            -- rst = 0 means output will  be same as input otherwise output will be 000
+            rst <= '0';
+            Add_in <= "000";
+            wait for 10ns;
+            
+            Add_in <= "001";
+            wait for 10ns;
+            
+            Add_in <= "010";
+            wait for 10ns;
+            
+            Add_in <= "011";
+            wait for 10ns;
+            
+            Add_in <= "100";
+            wait for 10ns;
+            
+            Add_in <= "101";
+            wait for 10ns;
+            
+            Add_in <= "110";
+            wait for 10ns;
+            
+            Add_in <= "111";
+            wait for 10ns;
+            
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "000";
+            wait for 10ns;
+            
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "001";
+            wait for 10ns;
+                    
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "010";
+            wait for 10ns;
+            
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "011";
+            wait for 10ns;
+                    
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "100";
+            wait for 10ns;
+            
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "101";
+            wait for 10ns; 
+                   
+            rst <= '1';
+            wait for 10ns;
+            Add_in <= "111";
+            wait;
+            
+        end process;
 end Behavioral;

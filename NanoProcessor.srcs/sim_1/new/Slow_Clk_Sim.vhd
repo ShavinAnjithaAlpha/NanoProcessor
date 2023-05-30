@@ -36,26 +36,29 @@ entity Slow_Clk_Sim is
 end Slow_Clk_Sim;
 
 architecture Behavioral of Slow_Clk_Sim is
-component Slow_Clk is 
-    port (
+Component Slow_Clk is 
+    PORT (
         Clk_in : in STD_LOGIC;
         Clk_out : out STD_LOGIC);
-end component;
+End Component;
 
-signal Clk_in :  std_logic := '0';
-signal Clk_out :  std_logic;
+    SIGNAL Clk_in :  STD_LOGIC := '0';
+    SIGNAL Clk_out :  STD_LOGIC;
 
 begin
-UUT : Slow_Clk port map(
-    Clk_in => Clk_in,
-    Clk_out => Clk_out);
+    UUT : Slow_Clk 
+        PORT MAP(
+        Clk_in => Clk_in,
+        Clk_out => Clk_out);
 
-clock_process: process
-begin
-    Clk_in <= '0';
-    WAIT FOR 5 ns;
-    Clk_in <= '1';
-    WAIT FOR 5 ns;
-end process;
+    clock_process: process
+    begin
+    
+        Clk_in <= '0';
+        wait for 5 ns;
+        Clk_in <= '1';
+        wait for 5 ns;
+        
+    end process;
       
 end Behavioral;

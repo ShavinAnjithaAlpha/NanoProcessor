@@ -37,43 +37,43 @@ entity Adder_3 is
 end Adder_3;
 
 architecture Behavioral of Adder_3 is
-component FA
-    port(
+Component FA
+    PORT(
         A : in STD_LOGIC;
         B : in STD_LOGIC;
         C_in : in STD_LOGIC;
         S : out STD_LOGIC;
         C_out : out STD_LOGIC
     );
-end component;
+End Component;
 
-signal FA_C_out : std_logic_vector(2 downto 0);
+    SIGNAL FA_C_out : STD_LOGIC_VECTOR(2 downto 0);
 
 begin
+        
+    FA_0 : FA
+        PORT MAP(
+            A => A_in(0),
+            B => '1',
+            S =>  S_out(0),
+            C_in => '0',
+            C_out => FA_C_out(0));
     
-FA_0 : FA
-    port map(
-        A => A_in(0),
-        B => '1',
-        S =>  S_out(0),
-        C_in => '0',
-        C_out => FA_C_out(0));
-
-FA_1 : FA
-    port map(
-        A => A_in(1),
-        B => '0',
-        S =>  S_out(1),
-        C_in => FA_C_out(0),
-        C_out => FA_C_out(1));
-    
-FA_2 : FA
-    port map(
-        A => A_in(2),
-        B => '0',
-        S =>  S_out(2),
-        C_in => FA_C_out(1),
-        C_out => FA_C_out(2));
+    FA_1 : FA
+        port map(
+            A => A_in(1),
+            B => '0',
+            S =>  S_out(1),
+            C_in => FA_C_out(0),
+            C_out => FA_C_out(1));
+        
+    FA_2 : FA
+        PORT MAP(
+            A => A_in(2),
+            B => '0',
+            S =>  S_out(2),
+            C_in => FA_C_out(1),
+            C_out => FA_C_out(2));
 
 
 end Behavioral;
