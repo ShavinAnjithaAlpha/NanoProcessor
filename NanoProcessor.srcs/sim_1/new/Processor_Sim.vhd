@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 05/30/2023 02:52:06 PM
--- Design Name: 
+-- Design Name: Processor Simulation
 -- Module Name: Processor_Sim - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: Nano-Processor
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 
@@ -47,6 +47,7 @@ End Component;
 
     SIGNAL Rst, Clk, Carry, Zeroes : STD_LOGIC;
     SIGNAL R7_out : STD_LOGIC_VECTOR(3 downto 0);
+
 begin
     UUT : Processor
         PORT MAP(
@@ -56,12 +57,20 @@ begin
             Zeroes => Zeroes,
             R7_out => R7_out);
 
-    process 
+    clk_process : process -- clock processor
         begin
             Clk <= '0';
             wait for 10ns;
             
             Clk <= '1';
             wait for 10ns;
+    end process;
+    
+    processor_process : process -- main processor task
+    begin
+        
+        Rst <= '1';
+        wait; --wait forever
+    
     end process;
 end Behavioral;

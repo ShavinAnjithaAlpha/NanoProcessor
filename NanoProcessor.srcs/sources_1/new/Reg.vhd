@@ -45,11 +45,11 @@ begin
     
     process (Clk, Rst) begin
         if Rst'event AND Rst = '1' then Q <= "0000"; -- reset the register asynchronously
-        else if (rising_edge(Clk)) then -- respont at the rising edge of the clock pulse
+        end if;
+        if (rising_edge(Clk)) then -- respont at the rising edge of the clock pulse
             if En = '1' then -- store the 4-bit fi En is asserted
                 Q <= D;
             end if;
-        end if;
         end if;
     
     end process;

@@ -236,7 +236,7 @@ begin
             V => Zeroes 
         );
         
-    jmp_check <= mux_2;
+    jmp_check <= mux_1;
     
     -- create ALU values selecter multiplexers
     ALU_Mux_1 : Mux_8_way_4 
@@ -266,6 +266,5 @@ begin
             A7 => R7,
             Y => mux_2
         );
-    
 
 end Behavioral;
