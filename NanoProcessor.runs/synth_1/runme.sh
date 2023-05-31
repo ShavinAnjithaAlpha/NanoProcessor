@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/SDK/2018.2/bin;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.2/bin
+  PATH=D:/Apps/Xilinx/SDK/2018.2/bin;D:/Apps/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;D:/Apps/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:D:/Apps/Xilinx/Vivado/2018.2/bin
 else
-  PATH=C:/Xilinx/SDK/2018.2/bin;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.2/bin:$PATH
+  PATH=D:/Apps/Xilinx/SDK/2018.2/bin;D:/Apps/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;D:/Apps/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:D:/Apps/Xilinx/Vivado/2018.2/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.runs/synth_1'
+HD_PWD='D:/Projects/NanoProcessor/NanoProcessor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Mux_8_way_4.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mux_8_way_4.tcl
+EAStep vivado -log Processor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Processor.tcl

@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon May 29 15:44:23 2023
-# Process ID: 17340
-# Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.runs/synth_1
-# Command line: vivado.exe -log Mux_8_way_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mux_8_way_4.tcl
-# Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.runs/synth_1/Mux_8_way_4.vds
-# Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.runs/synth_1\vivado.jou
+# Start of session at: Wed May 31 16:34:50 2023
+# Process ID: 816
+# Current directory: D:/Projects/NanoProcessor/NanoProcessor.runs/synth_1
+# Command line: vivado.exe -log Processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Processor.tcl
+# Log file: D:/Projects/NanoProcessor/NanoProcessor.runs/synth_1/Processor.vds
+# Journal file: D:/Projects/NanoProcessor/NanoProcessor.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source Mux_8_way_4.tcl -notrace
+source Processor.tcl -notrace
