@@ -39,11 +39,6 @@ entity Count_3 is
 end Count_3;
 
 architecture Behavioral of Count_3 is
-Component Slow_Clk
-   PORT(
-        Clk_in : in STD_LOGIC;
-        Clk_out : out STD_LOGIC);
-End Component;
 
 Component D_FF
     PORT(
@@ -54,15 +49,7 @@ Component D_FF
         Q : out STD_LOGIC);
 End Component;
 
-    SIGNAL Clk_Slow: STD_LOGIC;
-
 begin
-
-    -- this is for slow down the clock speed 
-    Slow_Clk_0 : Slow_Clk
-        PORT MAP(
-            Clk_in => Clk,
-            Clk_out => Clk_Slow);
     
     -- left bit store
     D_FF_0 : D_FF
@@ -70,7 +57,7 @@ begin
             D => Add_in(0),
             Rst => rst,
             En => '1',
-            Clk => Clk, -- Clk_Slow
+            Clk => Clk,
             Q => Add_out(0));
      
     -- middle bit store   
@@ -79,7 +66,7 @@ begin
             D => Add_in(1),
             Rst => rst,
             En => '1',
-            Clk => Clk, -- Clk_Slow
+            Clk => Clk,
             Q => Add_out(1));
     
     -- right bit store        
@@ -88,7 +75,7 @@ begin
             D => Add_in(2),
             Rst => rst,
             En => '1',
-            Clk => Clk, -- Clk_Slow
+            Clk => Clk,
             Q => Add_out(2));
         
 end Behavioral;

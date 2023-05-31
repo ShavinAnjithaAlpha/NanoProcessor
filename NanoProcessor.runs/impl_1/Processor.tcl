@@ -61,92 +61,23 @@ proc step_failed { step } {
 }
 
 
-start_step init_design
-set ACTIVE_STEP init_design
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
-  create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/Projects/NanoProcessor/NanoProcessor.cache/wt [current_project]
-  set_property parent.project_path D:/Projects/NanoProcessor/NanoProcessor.xpr [current_project]
-  set_property ip_output_repo D:/Projects/NanoProcessor/NanoProcessor.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet D:/Projects/NanoProcessor/NanoProcessor.runs/synth_1/Processor.dcp
-  read_xdc D:/Projects/NanoProcessor/NanoProcessor.srcs/constrs_1/imports/new/Basys3Labs.xdc
-  link_design -top Processor -part xc7a35tcpg236-1
-  close_msg_db -file init_design.pb
+  create_msg_db write_bitstream.pb
+  open_checkpoint Processor_routed.dcp
+  set_property webtalk.parent_dir {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.cache/wt} [current_project]
+  catch { write_mem_info -force Processor.mmi }
+  write_bitstream -force Processor.bit 
+  catch {write_debug_probes -quiet -force Processor}
+  catch {file copy -force Processor.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force Processor_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file Processor_drc_opted.rpt -pb Processor_drc_opted.pb -rpx Processor_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-    implement_debug_core 
-  } 
-  place_design 
-  write_checkpoint -force Processor_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file Processor_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file Processor_utilization_placed.rpt -pb Processor_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file Processor_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force Processor_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file Processor_drc_routed.rpt -pb Processor_drc_routed.pb -rpx Processor_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file Processor_methodology_drc_routed.rpt -pb Processor_methodology_drc_routed.pb -rpx Processor_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file Processor_power_routed.rpt -pb Processor_power_summary_routed.pb -rpx Processor_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file Processor_route_status.rpt -pb Processor_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file Processor_timing_summary_routed.rpt -pb Processor_timing_summary_routed.pb -rpx Processor_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file Processor_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file Processor_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file Processor_bus_skew_routed.rpt -pb Processor_bus_skew_routed.pb -rpx Processor_bus_skew_routed.rpx"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force Processor_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

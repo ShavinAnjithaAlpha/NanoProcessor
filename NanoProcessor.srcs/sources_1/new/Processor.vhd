@@ -36,10 +36,17 @@ entity Processor is
            Clk : in STD_LOGIC;
            Carry : out STD_LOGIC;
            Zeroes : out STD_LOGIC;
-           R7_out : out STD_LOGIC_VECTOR (3 downto 0));
+           R7_out : out STD_LOGIC_VECTOR (3 downto 0);
+           Anode : out STD_LOGIC_VECTOR(3 downto 0);
+           Seg_data : out STD_LOGIC_VECTOR(6 downto 0));
 end Processor;
 
 architecture Behavioral of Processor is
+    Component Slow_Clk
+        PORT(
+            Clk_in : in STD_LOGIC;
+            Clk_out : out STD_LOGIC);
+        End Component;
 
     Component ROM_8
         PORT (
@@ -131,6 +138,15 @@ architecture Behavioral of Processor is
         );
     End Component;
     
+    Component LUT_7_Display
+        Port ( 
+                address : in STD_LOGIC_VECTOR (3 downto 0);
+                data : out STD_LOGIC_VECTOR (6 downto 0)
+            );
+    End Component;
+    
+    -- slow down clock
+    SIGNAL s_clk : STD_LOGIC;
     -- all the intermediate signals 
     SIGNAL ins : STD_LOGIC_VECTOR(11 downto 0);
     SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
@@ -149,7 +165,11 @@ architecture Behavioral of Processor is
     SIGNAL im_val, jmp_check : STD_LOGIC_VECTOR(3 downto 0);
     
 begin
-    
+    Slow_Clk_0 : Slow_Clk
+        PORT MAP(
+            Clk_in => Clk,
+            Clk_out => s_clk
+        );
     -- create the 12-bitx8 ROM
     ROM_0_8 : ROM_8
         PORT MAP(
@@ -160,7 +180,7 @@ begin
     -- create program counter
     Program_Counter : Count_3 
         PORT MAP(
-            Clk => Clk,
+            Clk => s_clk,
             rst => Rst,
             Add_in => counter_in,
             Add_out => rom_addr
@@ -210,7 +230,7 @@ begin
     Reg_Bank_0 : Reg_Bank 
         PORT MAP(
             I => reg_bus,
-            Clk => Clk,
+            Clk => s_clk,
             Rst => Rst,
             Reg_En => reg_enb,
             R0 => R0,
@@ -224,6 +244,13 @@ begin
         );
         
     R7_out <= R7;
+    
+    LUT_7_Display_0 : LUT_7_Display
+        PORT MAP(
+            address => R7,
+            data => Seg_data
+        );
+    Anode <= "1110";
     
     -- create ALU part of the processor
     Add_Subtract_0 : Add_Subtract 
