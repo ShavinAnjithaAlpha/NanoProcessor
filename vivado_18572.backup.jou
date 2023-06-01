@@ -2,17 +2,23 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue May 30 14:50:52 2023
-# Process ID: 3940
+# Start of session at: Thu Jun  1 00:47:11 2023
+# Process ID: 18572
 # Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18408 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4820 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
 # Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/vivado.log
 # Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}
 update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Processor_Sim.vhd} w ]
-add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Processor_Sim.vhd}}
-update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
