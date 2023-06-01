@@ -78,14 +78,7 @@ begin
         );
         
         
-    Reg_0 : Reg 
-        PORT MAP(
-            D => I,
-            Clk => Clk,
-            Rst => Rst,
-            En => Decoder_Y(0),
-            Q => R0
-        );
+    R0 <= "0000"; -- register 1 value is always 0000 and its read only regsiter
     
         
     Reg_1 : Reg 

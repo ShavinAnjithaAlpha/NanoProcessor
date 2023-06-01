@@ -60,13 +60,16 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param synth.incrementalSynthesisCache C:/Users/User/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-16512-SHAVIN-ANJITHA/incrSyn
   open_checkpoint Processor_routed.dcp
-  set_property webtalk.parent_dir {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.cache/wt} [current_project]
+  set_property webtalk.parent_dir D:/Projects/NanoProcessor/NanoProcessor.cache/wt [current_project]
   catch { write_mem_info -force Processor.mmi }
   write_bitstream -force Processor.bit 
   catch {write_debug_probes -quiet -force Processor}

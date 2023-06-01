@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Jun  1 01:03:21 2023
-| Host         : LAPTOP-LNNNCD22 running 64-bit major release  (build 9200)
+| Date         : Fri Jun  2 01:08:26 2023
+| Host         : SHAVIN-ANJITHA running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Processor_control_sets_placed.rpt
 | Design       : Processor
 | Device       : xc7a35t
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |     8 |
-| Unused register locations in slices containing registers |    14 |
+| Unused register locations in slices containing registers |    24 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,7 +34,8 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      6 |            6 |
+|      4 |            5 |
+|      6 |            1 |
 |      8 |            1 |
 |    16+ |            1 |
 +--------+--------------+
@@ -46,9 +47,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              12 |            4 |
+| No           | No                    | No                     |              10 |            4 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              94 |           18 |
+| No           | Yes                   | No                     |              86 |           14 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
@@ -61,14 +62,14 @@ Table of Contents
 +----------------------+---------------+-------------------------------+------------------+----------------+
 |     Clock Signal     | Enable Signal |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +----------------------+---------------+-------------------------------+------------------+----------------+
-|  Slow_Clk_0/Q_reg[0] |               |                               |                2 |              6 |
-|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_1/Q_reg[2]_0   |                2 |              6 |
-|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_1/Q_reg[3]_0   |                2 |              6 |
-|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_1/Q_reg[0]_0   |                2 |              6 |
-|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_1/Q_reg[1]_0   |                2 |              6 |
-|  Clk_IBUF_BUFG       |               |                               |                2 |              6 |
-|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_0/Q[3]_i_1_n_0 |                2 |              8 |
-|  Clk_IBUF_BUFG       |               | Slow_Clk_0/Count[31]_i_1_n_0  |                8 |             62 |
+|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_2/Q_reg[0]     |                1 |              4 |
+|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_2/Q_reg[1]     |                1 |              4 |
+|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_2/Q_reg[3]     |                1 |              4 |
+|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_2/Q_reg[2]     |                1 |              4 |
+|  Clk_IBUF_BUFG       |               |                               |                1 |              4 |
+|  Slow_Clk_0/Q_reg[0] |               |                               |                3 |              6 |
+|  Slow_Clk_0/Q_reg[0] |               | Reg_Bank_0/Reg_1/Q[3]_i_1_n_0 |                2 |              8 |
+|  Clk_IBUF_BUFG       |               | Slow_Clk_0/Clk_status         |                8 |             62 |
 +----------------------+---------------+-------------------------------+------------------+----------------+
 
 

@@ -147,10 +147,6 @@ architecture Behavioral of Processor is
     
     -- slow down clock
     SIGNAL s_clk : STD_LOGIC;
-    -- all the intermediate signals 
-    SIGNAL ins : STD_LOGIC_VECTOR(11 downto 0);
-    SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
-    SIGNAL reg_bus : STD_LOGIC_VECTOR(3 downto 0);
     
     -- ALU signals
     SIGNAL alu_out : STD_LOGIC_VECTOR(3 downto 0);
@@ -163,6 +159,12 @@ architecture Behavioral of Processor is
     SIGNAL jmp_flag, load_sel, add_sub_sel : STD_LOGIC;
     SIGNAL jmp_addr, reg_enb, reg_sel_1, reg_sel_2 : STD_LOGIC_VECTOR(2 downto 0);
     SIGNAL im_val, jmp_check : STD_LOGIC_VECTOR(3 downto 0);
+    
+    
+    -- all other the intermediate signals 
+    SIGNAL ins : STD_LOGIC_VECTOR(11 downto 0);
+    SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
+    SIGNAL reg_bus : STD_LOGIC_VECTOR(3 downto 0);
     
 begin
     Slow_Clk_0 : Slow_Clk
@@ -180,7 +182,7 @@ begin
     -- create program counter
     Program_Counter : Count_3 
         PORT MAP(
-            Clk => Clk, -- s_clk
+            Clk => s_clk, -- s_clk
             rst => Rst,
             Add_in => counter_in,
             Add_out => rom_addr
@@ -230,7 +232,7 @@ begin
     Reg_Bank_0 : Reg_Bank 
         PORT MAP(
             I => reg_bus,
-            Clk => Clk, -- s_clk
+            Clk => s_clk, -- s_clk
             Rst => Rst,
             Reg_En => reg_enb,
             R0 => R0,

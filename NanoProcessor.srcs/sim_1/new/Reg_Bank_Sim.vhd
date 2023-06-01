@@ -89,12 +89,15 @@ begin
     
     reg_process : process -- register bank process
     begin
-    
-        I <= "1000";
+        
+        -- Index 210077D = 0011 0011 0100 1001 1101
+        -- Index 210134C = 0011 0011 0100 1101 0110
+        
+        I <= "1101";
         Reg_En <= "001";
         wait for 10ns;
         
-        I <= "0100";
+        I <= "0110";
         Reg_En <= "010";
         wait for 10ns;
         
@@ -102,8 +105,12 @@ begin
         Rst <= '1';
         wait for 10ns;
         
-        I <= "0110";
+        I <= "1001";
         Reg_En <= "011";
+        wait for 10ns;
+        
+        I <= "1101";
+        Reg_En <= "100";
         wait for 10ns;
         
         wait; -- wait forever

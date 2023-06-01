@@ -42,14 +42,14 @@ architecture Behavioral of Slow_Clk is
     SIGNAL Clk_status : STD_LOGIC := '0';
 
 begin
-
+    
+    Clk_out <= Clk_status;
     -- in this we slow down the clock speed for get visible output
     process (Clk_in) begin
         IF (rising_edge(Clk_in)) THEN
             Count <= count + 1;
-            IF (Count = 2) THEN -- for this we are considering only 2 otherwise count = 5000000
+            IF (Count = 5) THEN -- for this we are considering only 2 otherwise count = 5000000
                 Clk_status <= NOT Clk_status;
-                Clk_out <= Clk_status;
                 Count <= 1;
             END IF;
         END IF;

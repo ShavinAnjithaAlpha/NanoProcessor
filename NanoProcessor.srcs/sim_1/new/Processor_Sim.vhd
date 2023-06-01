@@ -65,16 +65,18 @@ begin
     clk_process : process -- clock processor
         begin
             Clk <= '0';
-            wait for 10ns;
+            wait for 1ns;
             
             Clk <= '1';
-            wait for 10ns;
+            wait for 1ns;
     end process;
     
     processor_process : process -- main processor task
     begin
         
         Rst <= '1';
+        wait for 10ns;
+        Rst <= '0';
         wait; --wait forever
     
     end process;

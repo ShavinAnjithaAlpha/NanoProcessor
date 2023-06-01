@@ -74,25 +74,28 @@ begin
     
     reg_process : process
     begin
-    
+        
+        -- Index 210077D = 0011 0011 0100 1001 1101
+        -- Index 210134C = 0011 0011 0100 1101 0110
+        
         En <= '0';
-        D <= "0110";
+        D <= "1101";
         wait for 10ns;
         
-        D <= "1010";
+        D <= "0110";
         wait for 10ns;
         
         En <= '1';
         wait for 10ns;
         
-        D <= "0110";
+        D <= "1001";
         wait for 10ns;
         
         -- reset the register
         Rst <= '1';
         wait for 10ns;
         
-        D <= "1110";
+        D <= "1101";
         wait for 10ns;
         
         wait; -- wait forever

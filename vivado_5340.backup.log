@@ -1,0 +1,203 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jun  1 08:33:08 2023
+# Process ID: 5340
+# Current directory: D:/Projects/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16108 D:\Projects\NanoProcessor\NanoProcessor.xpr
+# Log file: D:/Projects/NanoProcessor/vivado.log
+# Journal file: D:/Projects/NanoProcessor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Apps/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 805.812 ; gain = 130.957
+update_compile_order -fileset sources_1
+set_property top Ins_Decoder_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Ins_Decoder_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Ins_Decoder_Sim_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Ins_Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Ins_Decoder
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Ins_Decoder_Sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Ins_Decoder_Sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Apps/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Ins_Decoder_Sim_behav xil_defaultlib.Ins_Decoder_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.Ins_Decoder [ins_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ins_decoder_sim
+Built simulation snapshot Ins_Decoder_Sim_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim/xsim.dir/Ins_Decoder_Sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jun  1 08:34:52 2023...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 824.434 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Ins_Decoder_Sim_behav -key {Behavioral:sim_1:Functional:Ins_Decoder_Sim} -tclbatch {Ins_Decoder_Sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Ins_Decoder_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Ins_Decoder_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 836.359 ; gain = 11.926
+set_property top Processor_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Processor_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Processor_Sim_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Subtract.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Add_Subtract
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Adder_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Adder_3
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Buff_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Buff_3
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Buff_4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Buff_4
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Count_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Count_3
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/D_FF.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity D_FF
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Decoder_2_to_4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Decoder_2_to_4
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Decoder_3_to_8.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Decoder_3_to_8
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/FA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FA
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/HA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity HA
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/LUT_7_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LUT_7_Display
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Mux_2_way_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_2_way_3
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Mux_2_way_4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_2_way_4
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Mux_8_way_4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_8_way_4
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Processor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Processor
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ROM_8.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ROM_8
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Reg
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Reg_Bank.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Reg_Bank
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Slow_Clk.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Slow_Clk
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Processor_Sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Processor_Sim
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Apps/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Processor_Sim_behav xil_defaultlib.Processor_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.Slow_Clk [slow_clk_default]
+Compiling architecture behavioral of entity xil_defaultlib.ROM_8 [rom_8_default]
+Compiling architecture behavioral of entity xil_defaultlib.D_FF [d_ff_default]
+Compiling architecture behavioral of entity xil_defaultlib.Count_3 [count_3_default]
+Compiling architecture behavioral of entity xil_defaultlib.HA [ha_default]
+Compiling architecture behavioral of entity xil_defaultlib.FA [fa_default]
+Compiling architecture behavioral of entity xil_defaultlib.Adder_3 [adder_3_default]
+Compiling architecture behavioral of entity xil_defaultlib.Buff_3 [buff_3_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_2_way_3 [mux_2_way_3_default]
+Compiling architecture behavioral of entity xil_defaultlib.Ins_Decoder [ins_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.Buff_4 [buff_4_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_2_way_4 [mux_2_way_4_default]
+Compiling architecture behavioral of entity xil_defaultlib.Decoder_2_to_4 [decoder_2_to_4_default]
+Compiling architecture behavioral of entity xil_defaultlib.Decoder_3_to_8 [decoder_3_to_8_default]
+Compiling architecture behavioral of entity xil_defaultlib.Reg [reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Reg_Bank [reg_bank_default]
+Compiling architecture behavioral of entity xil_defaultlib.LUT_7_Display [lut_7_display_default]
+Compiling architecture behavioral of entity xil_defaultlib.Add_Subtract [add_subtract_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_8_way_4 [mux_8_way_4_default]
+Compiling architecture behavioral of entity xil_defaultlib.Processor [processor_default]
+Compiling architecture behavioral of entity xil_defaultlib.processor_sim
+Built simulation snapshot Processor_Sim_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Processor_Sim_behav -key {Behavioral:sim_1:Functional:Processor_Sim} -tclbatch {Processor_Sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Processor_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Processor_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  1 08:38:43 2023...
