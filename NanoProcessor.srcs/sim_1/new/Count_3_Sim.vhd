@@ -93,38 +93,17 @@ begin
             
             rst <= '1';
             wait for 10ns;
+            rst <= '0';
             Add_in <= "000";
             wait for 10ns;
             
-            rst <= '1';
-            wait for 10ns;
             Add_in <= "001";
             wait for 10ns;
-                    
-            rst <= '1';
-            wait for 10ns;
-            Add_in <= "010";
+            
+            Add_in <= "110";
             wait for 10ns;
             
-            rst <= '1';
-            wait for 10ns;
-            Add_in <= "011";
-            wait for 10ns;
-                    
-            rst <= '1';
-            wait for 10ns;
-            Add_in <= "100";
-            wait for 10ns;
-            
-            rst <= '1';
-            wait for 10ns;
-            Add_in <= "101";
-            wait for 10ns; 
-                   
-            rst <= '1';
-            wait for 10ns;
-            Add_in <= "111";
-            wait;
+            wait; -- wait forever
             
         end process;
 end Behavioral;

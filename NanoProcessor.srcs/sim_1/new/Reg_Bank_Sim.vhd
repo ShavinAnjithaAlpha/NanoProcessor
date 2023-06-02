@@ -93,6 +93,7 @@ begin
         -- Index 210077D = 0011 0011 0100 1001 1101
         -- Index 210134C = 0011 0011 0100 1101 0110
         
+        Rst <= '0';
         I <= "1101";
         Reg_En <= "001";
         wait for 10ns;
@@ -104,6 +105,7 @@ begin
         -- reset the regsiter bank
         Rst <= '1';
         wait for 10ns;
+        Rst <= '0';
         
         I <= "1001";
         Reg_En <= "011";

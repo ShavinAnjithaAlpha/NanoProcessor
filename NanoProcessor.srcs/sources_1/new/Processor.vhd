@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Processor is
     Port ( Rst : in STD_LOGIC;
            Clk : in STD_LOGIC;
-           Carry : out STD_LOGIC;
+           Ovf : out STD_LOGIC;
            Zeroes : out STD_LOGIC;
            R7_out : out STD_LOGIC_VECTOR (3 downto 0);
            Anode : out STD_LOGIC_VECTOR(3 downto 0);
@@ -133,8 +133,8 @@ architecture Behavioral of Processor is
             B_in : in STD_LOGIC_VECTOR (3 downto 0);
             S_out : out STD_LOGIC_VECTOR (3 downto 0);
             M : in STD_LOGIC;
-            C_out : out STD_LOGIC;
-            V : out STD_LOGIC
+            Zeroes : out STD_LOGIC;
+            Ovf : out STD_LOGIC
         );
     End Component;
     
@@ -261,8 +261,8 @@ begin
             B_in => mux_1,
             S_out => alu_out,
             M => add_sub_sel,
-            C_out => Carry,
-            V => Zeroes 
+            Ovf => Ovf,
+            Zeroes => Zeroes 
         );
         
     jmp_check <= mux_1;

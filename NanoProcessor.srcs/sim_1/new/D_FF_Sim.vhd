@@ -91,6 +91,7 @@ begin
         -- reset the flip flop
         Rst <= '1';
         wait for 10ns;
+        Rst <= '0';
         
         D <= '1';
         wait for 10ns;

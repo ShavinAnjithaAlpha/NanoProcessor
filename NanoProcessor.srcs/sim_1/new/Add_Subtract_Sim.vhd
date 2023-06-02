@@ -42,13 +42,13 @@ Component Add_Subtract
         B_in : in STD_LOGIC_VECTOR (3 downto 0);
         S_out : out STD_LOGIC_VECTOR (3 downto 0);
         M : in STD_LOGIC;
-        C_out : out STD_LOGIC;
-        V : out STD_LOGIC
+        Ovf : out STD_LOGIC;
+        Zeroes : out STD_LOGIC
     );
 End Component;
 
     SIGNAL A_in, B_in, S_out: STD_LOGIC_VECTOR(3 downto 0);
-    SIGNAL M, v, C_out: STD_LOGIC;
+    SIGNAL M, Ovf, Zeroes: STD_LOGIC;
 
 begin
 
@@ -58,8 +58,8 @@ begin
             B_in => B_in,
             M => M,
             S_out => S_out,
-            V => V,
-            C_out => C_out
+            Ovf => Ovf,
+            Zeroes => Zeroes
         );
 
     process

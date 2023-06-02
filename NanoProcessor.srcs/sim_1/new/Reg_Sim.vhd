@@ -94,6 +94,7 @@ begin
         -- reset the register
         Rst <= '1';
         wait for 10ns;
+        Rst <= '0';
         
         D <= "1101";
         wait for 10ns;

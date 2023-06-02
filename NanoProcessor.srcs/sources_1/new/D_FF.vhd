@@ -43,14 +43,15 @@ architecture Behavioral of D_FF is
 
 begin
 
-    process (Clk, Rst) begin -- procss begin when clock changes
-        if Rst'event AND Rst = '1' then Q <= '0'; -- reset the D flip-flop asynchronously
-        end if;
-        if (rising_edge(Clk)) then  -- respond at clock rising edge
+    process (Clk, Rst) begin -- procss begin when clock/reset changes
+        if (Rst = '1') then 
+            Q <= '0'; -- reset the D flip-flop asynchronously
+        else if (rising_edge(Clk)) then  -- respond at clock rising edge
             if En = '1' then -- store D if En is asserted
                 Q <= D;
              end if;
-         end if;
+        end if;
+        end if;
     end process;
 
 

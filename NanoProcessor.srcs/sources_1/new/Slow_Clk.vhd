@@ -48,7 +48,7 @@ begin
     process (Clk_in) begin
         IF (rising_edge(Clk_in)) THEN
             Count <= count + 1;
-            IF (Count = 5) THEN -- for this we are considering only 2 otherwise count = 5000000
+            IF (Count = 30000000) THEN -- for this we are considering only 2 otherwise count = 5000000
                 Clk_status <= NOT Clk_status;
                 Count <= 1;
             END IF;
