@@ -1,0 +1,307 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Jun  3 19:18:13 2023
+# Process ID: 17468
+# Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1628 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
+# Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/vivado.log
+# Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 948.180 ; gain = 195.137
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Bit_Comparator_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Bit_Comparator_Sim_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Bit_Comparator_Sim_behav xil_defaultlib.Bit_Comparator_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Bit_Comparator_Sim_behav -key {Behavioral:sim_1:Functional:Bit_Comparator_Sim} -tclbatch {Bit_Comparator_Sim.tcl} -view {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/A was not found in the design.
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/B was not found in the design.
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/S was not found in the design.
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/Op was not found in the design.
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/Ovf was not found in the design.
+WARNING: Simulation object /Add_Sub_Reg_Trf_Sim/Zeroes was not found in the design.
+source Bit_Comparator_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Bit_Comparator_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+current_wave_config {Processor_Sim_behav.wcfg}
+Processor_Sim_behav.wcfg
+add_wave {{/Bit_Comparator_Sim/A}} {{/Bit_Comparator_Sim/B}} {{/Bit_Comparator_Sim/S}} {{/Bit_Comparator_Sim/M}} 
+save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Bit_Comparator_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Bit_Comparator_Sim_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Bit_Comparator_Sim_behav xil_defaultlib.Bit_Comparator_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Bit_Comparator_Sim_behav -key {Behavioral:sim_1:Functional:Bit_Comparator_Sim} -tclbatch {Bit_Comparator_Sim.tcl} -view {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+source Bit_Comparator_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Bit_Comparator_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Bit_Comparator_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Bit_Comparator_Sim_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Bit_Comparator_Sim_behav xil_defaultlib.Bit_Comparator_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Bit_Comparator_Sim_behav -key {Behavioral:sim_1:Functional:Bit_Comparator_Sim} -tclbatch {Bit_Comparator_Sim.tcl} -view {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+source Bit_Comparator_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Bit_Comparator_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd}}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd}}
+update_compile_order -fileset sim_1
+set_property top Comparetor_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Comparetor_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Comparetor_Sim_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Comparetor
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Comparetor_Sim
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Comparetor_Sim_behav xil_defaultlib.Comparetor_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.Bit_comparetor [bit_comparetor_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comparetor [comparetor_default]
+Compiling architecture behavioral of entity xil_defaultlib.comparetor_sim
+Built simulation snapshot Comparetor_Sim_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Tharusha/Documents/Academic -notrace
+couldn't read file "C:/Users/Tharusha/Documents/Academic": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun  3 19:23:06 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Comparetor_Sim_behav -key {Behavioral:sim_1:Functional:Comparetor_Sim} -tclbatch {Comparetor_Sim.tcl} -view {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+WARNING: Simulation object /Bit_Comparator_Sim/A was not found in the design.
+WARNING: Simulation object /Bit_Comparator_Sim/B was not found in the design.
+WARNING: Simulation object /Bit_Comparator_Sim/S was not found in the design.
+WARNING: Simulation object /Bit_Comparator_Sim/M was not found in the design.
+source Comparetor_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Comparetor_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.535 ; gain = 7.148
+current_wave_config {Processor_Sim_behav.wcfg}
+Processor_Sim_behav.wcfg
+add_wave {{/Comparetor_Sim/M}} 
+current_wave_config {Processor_Sim_behav.wcfg}
+Processor_Sim_behav.wcfg
+add_wave {{/Comparetor_Sim/A_in}} {{/Comparetor_Sim/B_in}} {{/Comparetor_Sim/M}} {{/Comparetor_Sim/S_out}} 
+save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Comparetor_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Comparetor_Sim_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Comparetor_Sim_behav xil_defaultlib.Comparetor_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Comparetor_Sim_behav -key {Behavioral:sim_1:Functional:Comparetor_Sim} -tclbatch {Comparetor_Sim.tcl} -view {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+source Comparetor_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Comparetor_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd}}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd}}
+update_compile_order -fileset sim_1
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Logical_Comparetor.vhd} w ]
+add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Logical_Comparetor.vhd}}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Logical_Comparetor_Sim.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Logical_Comparetor_Sim.vhd}}
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  3 19:31:13 2023...

@@ -2,7 +2,14 @@
 2018.2
 Jun 14 2018
 20:41:02
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Comparator_Sim.vhd,1685800001,vhdl,,,,bit_comparator_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd,1685800360,vhdl,,,,comparetor_sim,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_comparetor.vhd,1685799927,vhdl,,,,bit_comparetor,,,,,,,,
-C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd,1685800305,vhdl,,,,comparetor,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/ALU_Mux_Sim.vhd,1685818546,vhdl,,,,alu_mux_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Comparator_Sim.vhd,1685819259,vhdl,,,,bit_comparator_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd,1685819335,vhdl,,,,bit_logical_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Logical_Comparetor_Sim.vhd,1685819145,vhdl,,,,logical_unit_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ALU_Mux.vhd,1685818449,vhdl,,,,alu_mux,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU.vhd,1685820222,vhdl,,,,add_sub_reg_trf_cu,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU_Sim.vhd,1685820639,vhdl,,,,add_sub_reg_trf_cu_sim,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_comparetor.vhd,1685818910,vhdl,,,,bit_comparator,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd,1685818965,vhdl,,,,bit_logic,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Buff_4.vhd,1685000305,vhdl,,,,buff_4,,,,,,,,
+D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Logical_Comparetor.vhd,1685819036,vhdl,,,,logical_unit,,,,,,,,

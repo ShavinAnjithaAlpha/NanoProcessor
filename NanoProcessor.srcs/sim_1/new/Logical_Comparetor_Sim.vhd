@@ -31,12 +31,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Logical_Comparetor_Sim is
+entity Logical_Unit_Sim is
 --  Port ( );
-end Logical_Comparetor_Sim;
+end Logical_Unit_Sim;
 
-architecture Behavioral of Logical_Comparetor_Sim is
-Component Logical_Comparetor
+architecture Behavioral of Logical_Unit_Sim is
+Component Logical_Unit
     PORT(
         A_in : in STD_LOGIC_VECTOR (3 downto 0);
         B_in : in STD_LOGIC_VECTOR (3 downto 0);
@@ -48,12 +48,12 @@ SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR(3 downto 0);
 SIGNAL M : STD_LOGIC_VECTOR(1 downto 0);
 
 begin
-UUT : Logical_Comparetor
-    PORT MAP(
-        A_in => A_in,
-        B_in => B_in,
-        S_out => S_out,
-        M => m);
+    UUT : Logical_Unit
+        PORT MAP(
+            A_in => A_in,
+            B_in => B_in,
+            S_out => S_out,
+            M => m);
 
     process
     begin

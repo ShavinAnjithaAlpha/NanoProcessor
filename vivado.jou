@@ -2,69 +2,155 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Jun  3 19:18:13 2023
-# Process ID: 17468
-# Current directory: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1628 C:\Users\Tharusha\Documents\Academic Semester 02\Computer Organization and Digital Designing\NanoProcessor\NanoProcessor.xpr
-# Log file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/vivado.log
-# Journal file: C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor\vivado.jou
+# Start of session at: Sun Jun  4 00:23:01 2023
+# Process ID: 12528
+# Current directory: D:/Projects/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2652 D:\Projects\NanoProcessor\NanoProcessor.xpr
+# Log file: D:/Projects/NanoProcessor/vivado.log
+# Journal file: D:/Projects/NanoProcessor\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.xpr}
+open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-source Bit_Comparator_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Bit_Comparator_Sim/A}} {{/Bit_Comparator_Sim/B}} {{/Bit_Comparator_Sim/S}} {{/Bit_Comparator_Sim/M}} 
-save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-source Bit_Comparator_Sim.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-source Bit_Comparator_Sim.tcl
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd} w ]
-add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Comparetor.vhd}}
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ALU_Mux.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ALU_Mux.vhd
 update_compile_order -fileset sources_1
 set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd} w ]
-add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Comparetor_Sim.vhd}}
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/ALU_Mux_Sim.vhd w ]
+add_files -fileset sim_1 D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/ALU_Mux_Sim.vhd
 update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source ALU_Mux_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/ALU_Mux_Sim/Add_Sub_Bus}} {{/ALU_Mux_Sim/Logic_Bus}} {{/ALU_Mux_Sim/Mul_Bus}} {{/ALU_Mux_Sim/Y}} {{/ALU_Mux_Sim/Mode}} {{/ALU_Mux_Sim/Op}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source ALU_Mux_Sim.tcl
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
-set_property top Comparetor_Sim [get_filesets sim_1]
+set_property top Bit_Logical_Sim [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 # Re-enabling previously disabled source management mode.
 set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
 launch_simulation
-open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-source Comparetor_Sim.tcl
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Logical_Sim.tcl
 current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Comparetor_Sim/M}} 
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Comparetor_Sim/A_in}} {{/Comparetor_Sim/B_in}} {{/Comparetor_Sim/M}} {{/Comparetor_Sim/S_out}} 
-save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
+add_wave {{/Bit_Logical_Sim/M}} {{/Bit_Logical_Sim/A}} {{/Bit_Logical_Sim/B}} {{/Bit_Logical_Sim/S}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
 close_sim
 launch_simulation
-open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/Processor_Sim_behav.wcfg}
-source Comparetor_Sim.tcl
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd} w ]
-add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd}}
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd} w ]
-add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd}}
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Logical_Sim.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Logical_Unit_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Logical_Comparetor.vhd} w ]
-add_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sources_1/new/Logical_Comparetor.vhd}}
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Logical_Comparetor_Sim.vhd} w ]
-add_files -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor/NanoProcessor.srcs/sim_1/new/Logical_Comparetor_Sim.vhd}}
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Logical_Unit_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/Logical_Unit_Sim/A_in}} {{/Logical_Unit_Sim/B_in}} {{/Logical_Unit_Sim/S_out}} {{/Logical_Unit_Sim/M}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Logical_Unit_Sim.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Bit_Logical_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
+current_sim simulation_4
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Logical_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/Bit_Logical_Sim/M}} {{/Bit_Logical_Sim/A}} {{/Bit_Logical_Sim/B}} {{/Bit_Logical_Sim/S}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Logical_Sim.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Bit_Comparator_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Comparator_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/Bit_Comparator_Sim/A}} {{/Bit_Comparator_Sim/B}} {{/Bit_Comparator_Sim/S}} {{/Bit_Comparator_Sim/M}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Comparator_Sim.tcl
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU.vhd
+update_compile_order -fileset sources_1
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU_Sim.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf_CU_Sim.vhd
+update_compile_order -fileset sources_1
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Add_Sub_Reg_Trf_CU_Sim [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Bit_Comparator_Sim.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Comparator [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Add_Sub_Reg_Trf_CU_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Add_Sub_Reg_Trf_CU_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/Add_Sub_Reg_Trf_CU_Sim/Mode}} {{/Add_Sub_Reg_Trf_CU_Sim/Oper}} {{/Add_Sub_Reg_Trf_CU_Sim/S}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Add_Sub_Reg_Trf_CU_Sim.tcl
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ALU.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/ALU.vhd
+update_compile_order -fileset sources_1
+close_sim
+current_sim simulation_11
+close_sim
+current_sim simulation_8
+close_sim
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+current_sim simulation_6
 close_sim
 close_sim

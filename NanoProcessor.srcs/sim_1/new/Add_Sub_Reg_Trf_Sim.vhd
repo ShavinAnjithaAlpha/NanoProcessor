@@ -38,7 +38,7 @@ end Add_Sub_Reg_Trf_Sim;
 architecture Behavioral of Add_Sub_Reg_Trf_Sim is
 
     Component Add_Sub_Reg_Trf
-        Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
+        PORT ( A : in STD_LOGIC_VECTOR (3 downto 0);
                B : in STD_LOGIC_VECTOR (3 downto 0);
                Op : in STD_LOGIC_VECTOR (1 downto 0);
                S : out STD_LOGIC_VECTOR (3 downto 0);

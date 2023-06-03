@@ -31,57 +31,57 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Comparetor is
+entity Comparator is
     Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
            B_in : in STD_LOGIC_VECTOR (3 downto 0);
            M : in STD_LOGIC_VECTOR (1 downto 0);
            S_out : out STD_LOGIC);
-end Comparetor;
+end Comparator;
 
-architecture Behavioral of Comparetor is
-Component Bit_comparetor
-    PORT(
-        A : in STD_LOGIC;
-        B : in STD_LOGIC;
-        M : in STD_LOGIC_VECTOR(1 downto 0);
-        S : out STD_LOGIC;
-        E : out STD_LOGIC);
-End Component;
+architecture Behavioral of Comparator is
+    Component Bit_comparator
+        PORT(
+            A : in STD_LOGIC;
+            B : in STD_LOGIC;
+            M : in STD_LOGIC_VECTOR(1 downto 0);
+            S : out STD_LOGIC;
+            E : out STD_LOGIC);
+    End Component;
 
 SIGNAL S, E : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
-Bit_0 : Bit_comparetor
-    PORT MAP(
-        A => A_in(0),
-        B => B_in(0),
-        M => M,
-        S => S(0),
-        E => E(0));
-        
-Bit_1 : Bit_comparetor
-    PORT MAP(
-        A => A_in(1),
-        B => B_in(1),
-        M => M,
-        S => S(1),
-        E => E(1));
-        
-Bit_2 : Bit_comparetor
-    PORT MAP(
-        A => A_in(2),
-        B => B_in(2),
-        M => M,
-        S => S(2),
-        E => E(2));
-        
-Bit_3 : Bit_comparetor
-    PORT MAP(
-        A => A_in(3),
-        B => B_in(3),
-        M => M,
-        S => S(3),
-        E => E(3));
+    Bit_0 : Bit_comparator
+        PORT MAP(
+            A => A_in(0),
+            B => B_in(0),
+            M => M,
+            S => S(0),
+            E => E(0));
+            
+    Bit_1 : Bit_comparator
+        PORT MAP(
+            A => A_in(1),
+            B => B_in(1),
+            M => M,
+            S => S(1),
+            E => E(1));
+            
+    Bit_2 : Bit_comparator
+        PORT MAP(
+            A => A_in(2),
+            B => B_in(2),
+            M => M,
+            S => S(2),
+            E => E(2));
+            
+    Bit_3 : Bit_comparator
+        PORT MAP(
+            A => A_in(3),
+            B => B_in(3),
+            M => M,
+            S => S(3),
+            E => E(3));
         
     -- 00 A == B
     -- 01 A < B

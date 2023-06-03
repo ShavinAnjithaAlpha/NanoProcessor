@@ -31,30 +31,30 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Comparetor_Sim is
+entity Comparator_Sim is
 --  Port ( );
-end Comparetor_Sim;
+end Comparator_Sim;
 
-architecture Behavioral of Comparetor_Sim is
-Component Comparetor
-    PORT(
-        A_in : in STD_LOGIC_VECTOR (3 downto 0);
-        B_in : in STD_LOGIC_VECTOR (3 downto 0);
-        M : in STD_LOGIC_VECTOR (1 downto 0);
-        S_out : out STD_LOGIC);
-End Component;
+architecture Behavioral of Comparator_Sim is
+    Component Comparator
+        PORT(
+            A_in : in STD_LOGIC_VECTOR (3 downto 0);
+            B_in : in STD_LOGIC_VECTOR (3 downto 0);
+            M : in STD_LOGIC_VECTOR (1 downto 0);
+            S_out : out STD_LOGIC);
+    End Component;
 
 SIGNAL A_in, B_in: STD_LOGIC_VECTOR (3 downto 0);
 SIGNAL M : STD_LOGIC_VECTOR (1 downto 0);
 SIGNAL S_out : STD_LOGIC;
 
 begin
-UUT : Comparetor
-    PORT MAP(
-        A_in => A_in,
-        B_in => B_in,
-        M => M,
-        S_out => S_out);
+    UUT : Comparator
+        PORT MAP(
+            A_in => A_in,
+            B_in => B_in,
+            M => M,
+            S_out => S_out);
 
     process
         begin

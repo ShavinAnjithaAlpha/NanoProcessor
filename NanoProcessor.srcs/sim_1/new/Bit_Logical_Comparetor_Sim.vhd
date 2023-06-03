@@ -31,29 +31,30 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Bit_Logical_Comparetor_Sim is
+entity Bit_Logical_Sim is
 --  Port ( );
-end Bit_Logical_Comparetor_Sim;
+end Bit_Logical_Sim;
 
-architecture Behavioral of Bit_Logical_Comparetor_Sim is
-Component Bit_logical_Comparetor
-    PORT(
-        A : in STD_LOGIC;
-        B : in STD_LOGIC;
-        S : out STD_LOGIC;
-        M : in STD_LOGIC_VECTOR (1 downto 0));
-End Component;
+architecture Behavioral of Bit_Logical_Sim is
+    
+    Component Bit_Logic
+        PORT(
+            A : in STD_LOGIC;
+            B : in STD_LOGIC;
+            S : out STD_LOGIC;
+            M : in STD_LOGIC_VECTOR (1 downto 0));
+    End Component;
 
 SIGNAL M : STD_LOGIC_VECTOR(1 downto 0);
 SIGNAL A,B,S : STD_LOGIC;
 
 begin
-UUT : Bit_logical_Comparetor
-    PORT MAP(
-        A => A,
-        B => B,
-        S => S,
-        M => M);
+    UUT : Bit_Logic
+        PORT MAP(
+            A => A,
+            B => B,
+            S => S,
+            M => M);
         
     process
         begin 

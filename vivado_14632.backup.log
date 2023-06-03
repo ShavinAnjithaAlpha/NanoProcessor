@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Jun  4 00:20:09 2023
+# Process ID: 14632
+# Current directory: D:/Projects/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15768 D:\Projects\NanoProcessor\NanoProcessor.xpr
+# Log file: D:/Projects/NanoProcessor/vivado.log
+# Journal file: D:/Projects/NanoProcessor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/NanoProcessor' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Apps/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 807.039 ; gain = 131.859
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  4 00:22:10 2023...

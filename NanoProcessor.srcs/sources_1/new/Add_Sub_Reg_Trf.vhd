@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
--- 
+-- Name - Shavin Anjitha
 -- Create Date: 06/03/2023 05:39:25 PM
--- Design Name: 
+-- Design Name: Adder and Subtractor With Register Bypass
 -- Module Name: Add_Sub_Reg_Trf - Behavioral
--- Project Name: 
--- Target Devices: 
+-- Project Name: NanoProcessors
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 

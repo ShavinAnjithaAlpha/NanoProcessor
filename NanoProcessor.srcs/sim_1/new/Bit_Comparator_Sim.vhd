@@ -36,26 +36,26 @@ entity Bit_Comparator_Sim is
 end Bit_Comparator_Sim;
 
 architecture Behavioral of Bit_Comparator_Sim is
-Component Bit_Comparetor
-    PORT(
-        A : in STD_LOGIC;
-        B : in STD_LOGIC;
-        M : in STD_LOGIC_VECTOR(1 downto 0);
-        S : out STD_LOGIC
-    );
-End Component;
+    Component Bit_Comparator
+        PORT(
+            A : in STD_LOGIC;
+            B : in STD_LOGIC;
+            M : in STD_LOGIC_VECTOR(1 downto 0);
+            S : out STD_LOGIC
+        );
+    End Component;
 
 SIGNAL A, B, S : STD_LOGIC;
 SIGNAL M : STD_LOGIC_VECTOR(1 downto 0);
 
 begin
 
-UUT : Bit_Comparetor
-    PORT MAP(
-        A => A,
-        B => B,
-        M => M,
-        S => S);
+    UUT : Bit_Comparator
+        PORT MAP(
+            A => A,
+            B => B,
+            M => M,
+            S => S);
         
     process
         begin

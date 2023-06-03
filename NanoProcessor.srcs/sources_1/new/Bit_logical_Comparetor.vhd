@@ -31,16 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Bit_logical_Comparetor is
+entity Bit_Logic is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
            S : out STD_LOGIC;
            M : in STD_LOGIC_VECTOR (1 downto 0));
-end Bit_logical_Comparetor;
+end Bit_Logic;
 
-architecture Behavioral of Bit_logical_Comparetor is
+architecture Behavioral of Bit_Logic is
 
 begin
+    
     S <= (M(0) AND (A XOR B)) OR (A AND B AND (NOT M(1))) OR ((NOT A) AND M(1) AND (NOT M(0)));
 
 end Behavioral;

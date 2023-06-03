@@ -31,15 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Bit_comparetor is
+entity Bit_comparator is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
            M : in STD_LOGIC_VECTOR(1 downto 0);
            S : out STD_LOGIC;
            E : out STD_LOGIC);
-end Bit_comparetor;
+end Bit_comparator;
 
-architecture Behavioral of Bit_comparetor is
+architecture Behavioral of Bit_comparator is
 
 begin
 

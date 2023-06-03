@@ -31,50 +31,51 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Logical_Comparetor is
+entity Logical_Unit is
     Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
            B_in : in STD_LOGIC_VECTOR (3 downto 0);
            S_out : out STD_LOGIC_VECTOR (3 downto 0);
            M : in STD_LOGIC_VECTOR (1 downto 0));
-end Logical_Comparetor;
+end Logical_Unit;
 
-architecture Behavioral of Logical_Comparetor is
-Component Bit_logical_Comparetor
-    PORT(
-        A : in STD_LOGIC;
-        B : in STD_LOGIC;
-        S : out STD_LOGIC;
-        M : in STD_LOGIC_VECTOR (1 downto 0));
-End Component;
+architecture Behavioral of Logical_Unit is
+
+    Component Bit_Logic
+        PORT(
+            A : in STD_LOGIC;
+            B : in STD_LOGIC;
+            S : out STD_LOGIC;
+            M : in STD_LOGIC_VECTOR (1 downto 0));
+    End Component;
 
 
 begin
-BLC_0 : Bit_logical_Comparetor
-    PORT MAP(
-        A => A_in(0),
-        B => B_in(0),
-        S => S_out(0),
-        M => M);
-        
-BLC_1 : Bit_logical_Comparetor
-    PORT MAP(
-        A => A_in(1),
-        B => B_in(1),
-        S => S_out(1),
-        M => M);
-        
-BLC_2 : Bit_logical_Comparetor
-    PORT MAP(
-        A => A_in(2),
-        B => B_in(2),
-        S => S_out(2),
-        M => M);
-        
-BLC_3 : Bit_logical_Comparetor
-    PORT MAP(
-        A => A_in(3),
-        B => B_in(3),
-        S => S_out(3),
-        M => M);
+    BLC_0 : Bit_Logic
+        PORT MAP(
+            A => A_in(0),
+            B => B_in(0),
+            S => S_out(0),
+            M => M);
+            
+    BLC_1 : Bit_Logic
+        PORT MAP(
+            A => A_in(1),
+            B => B_in(1),
+            S => S_out(1),
+            M => M);
+            
+    BLC_2 : Bit_Logic
+        PORT MAP(
+            A => A_in(2),
+            B => B_in(2),
+            S => S_out(2),
+            M => M);
+            
+    BLC_3 : Bit_Logic
+        PORT MAP(
+            A => A_in(3),
+            B => B_in(3),
+            S => S_out(3),
+            M => M);
 
 end Behavioral;
