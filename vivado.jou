@@ -2,193 +2,38 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Jun  2 16:01:28 2023
-# Process ID: 13724
+# Start of session at: Sat Jun  3 17:34:54 2023
+# Process ID: 2692
 # Current directory: D:/Projects/NanoProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4596 D:\Projects\NanoProcessor\NanoProcessor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21000 D:\Projects\NanoProcessor\NanoProcessor.xpr
 # Log file: D:/Projects/NanoProcessor/vivado.log
 # Journal file: D:/Projects/NanoProcessor\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
 update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Slow_Clk_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Slow_Clk_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Slow_Clk_Sim/Clk_in}} {{/Slow_Clk_Sim/Clk_out}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Slow_Clk_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Count_3_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Count_3_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Count_3_Sim/Add_in}} {{/Count_3_Sim/Add_out}} {{/Count_3_Sim/rst}} {{/Count_3_Sim/Clk}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Count_3_Sim.tcl
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Count_3_Sim.tcl
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Count_3_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top D_FF_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source D_FF_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/D_FF_Sim/Clk}} {{/D_FF_Sim/En}} {{/D_FF_Sim/Rst}} {{/D_FF_Sim/D}} {{/D_FF_Sim/Q}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source D_FF_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Reg_Bank_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Reg_Bank_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Reg_Bank_Sim/I}} {{/Reg_Bank_Sim/Clk}} {{/Reg_Bank_Sim/Rst}} {{/Reg_Bank_Sim/Reg_En}} {{/Reg_Bank_Sim/R0}} {{/Reg_Bank_Sim/R1}} {{/Reg_Bank_Sim/R2}} {{/Reg_Bank_Sim/R3}} {{/Reg_Bank_Sim/R4}} {{/Reg_Bank_Sim/R5}} {{/Reg_Bank_Sim/R6}} {{/Reg_Bank_Sim/R7}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Reg_Bank_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Reg_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Reg_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Reg_Sim/Clk}} {{/Reg_Sim/En}} {{/Reg_Sim/Rst}} {{/Reg_Sim/D}} {{/Reg_Sim/Q}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Reg_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Processor_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Processor_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Processor_Sim/Rst}} {{/Processor_Sim/Clk}} {{/Processor_Sim/Carry}} {{/Processor_Sim/Zeroes}} {{/Processor_Sim/R7_out}} {{/Processor_Sim/Anode}} {{/Processor_Sim/Seg_data}} 
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Processor_Sim/UUT/Slow_Clk_0/Clk_out}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Processor_Sim.tcl
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Processor_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Add_Subtract [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf.vhd
 update_compile_order -fileset sources_1
-close_sim
-launch_simulation
-current_sim simulation_12
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Sub_Reg_Trf_Sim.vhd w ]
+add_files -fileset sim_1 D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Sub_Reg_Trf_Sim.vhd
+update_compile_order -fileset sim_1
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
-set_property top Add_Subtract_Sim [get_filesets sim_1]
+set_property top Add_Sub_Reg_Trf_Sim [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 # Re-enabling previously disabled source management mode.
 set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
 launch_simulation
 open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Add_Subtract_Sim.tcl
+source Add_Sub_Reg_Trf_Sim.tcl
 current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Add_Subtract_Sim/A_in}} {{/Add_Subtract_Sim/B_in}} {{/Add_Subtract_Sim/S_out}} {{/Add_Subtract_Sim/M}} {{/Add_Subtract_Sim/Ovf}} {{/Add_Subtract_Sim/Zeroes}} 
+add_wave {{/Add_Sub_Reg_Trf_Sim/A}} {{/Add_Sub_Reg_Trf_Sim/B}} {{/Add_Sub_Reg_Trf_Sim/S}} {{/Add_Sub_Reg_Trf_Sim/Op}} {{/Add_Sub_Reg_Trf_Sim/Ovf}} {{/Add_Sub_Reg_Trf_Sim/Zeroes}} 
 save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
 close_sim
 launch_simulation
 open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Add_Subtract_Sim.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Processor_Sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Processor_Sim.tcl
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Processor_Sim/Rst}} {{/Processor_Sim/Clk}} {{/Processor_Sim/Ovf}} {{/Processor_Sim/Zeroes}} {{/Processor_Sim/R7_out}} {{/Processor_Sim/Anode}} {{/Processor_Sim/Seg_data}} 
-current_wave_config {Processor_Sim_behav.wcfg}
-add_wave {{/Processor_Sim/UUT/Slow_Clk_0/Clk_out}} 
-save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
-source Processor_Sim.tcl
-reset_run impl_1
-reset_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-open_run impl_1
-close_design
-synth_design -rtl -name rtl_1
-close_sim
-current_sim simulation_17
-close_sim
-current_sim simulation_12
-close_sim
-current_sim simulation_10
-close_sim
-current_sim simulation_8
-close_sim
-current_sim simulation_6
-close_sim
+source Add_Sub_Reg_Trf_Sim.tcl
 close_sim
