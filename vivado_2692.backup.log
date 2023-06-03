@@ -1,0 +1,157 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Jun  3 17:34:54 2023
+# Process ID: 2692
+# Current directory: D:/Projects/NanoProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21000 D:\Projects\NanoProcessor\NanoProcessor.xpr
+# Log file: D:/Projects/NanoProcessor/vivado.log
+# Journal file: D:/Projects/NanoProcessor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/NanoProcessor/NanoProcessor.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Apps/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 803.773 ; gain = 133.922
+update_compile_order -fileset sources_1
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf.vhd w ]
+add_files D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Sub_Reg_Trf_Sim.vhd w ]
+add_files -fileset sim_1 D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Sub_Reg_Trf_Sim.vhd
+update_compile_order -fileset sim_1
+set_property top Add_Sub_Reg_Trf_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Add_Sub_Reg_Trf_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Add_Sub_Reg_Trf_Sim_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sources_1/new/Add_Sub_Reg_Trf.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Add_Sub_Reg_Trf
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Projects/NanoProcessor/NanoProcessor.srcs/sim_1/new/Add_Sub_Reg_Trf_Sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Add_Sub_Reg_Trf_Sim
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Apps/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Add_Sub_Reg_Trf_Sim_behav xil_defaultlib.Add_Sub_Reg_Trf_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.HA [ha_default]
+Compiling architecture behavioral of entity xil_defaultlib.FA [fa_default]
+Compiling architecture behavioral of entity xil_defaultlib.Add_Subtract [add_subtract_default]
+Compiling architecture behavioral of entity xil_defaultlib.Buff_4 [buff_4_default]
+Compiling architecture behavioral of entity xil_defaultlib.Add_Sub_Reg_Trf [add_sub_reg_trf_default]
+Compiling architecture behavioral of entity xil_defaultlib.add_sub_reg_trf_sim
+Built simulation snapshot Add_Sub_Reg_Trf_Sim_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim/xsim.dir/Add_Sub_Reg_Trf_Sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun  3 17:59:45 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 968.004 ; gain = 0.102
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Add_Sub_Reg_Trf_Sim_behav -key {Behavioral:sim_1:Functional:Add_Sub_Reg_Trf_Sim} -tclbatch {Add_Sub_Reg_Trf_Sim.tcl} -view {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+WARNING: Simulation object /Processor_Sim/Clk was not found in the design.
+WARNING: Simulation object /Processor_Sim/UUT/Slow_Clk_0/Clk_out was not found in the design.
+WARNING: Simulation object /Processor_Sim/Rst was not found in the design.
+WARNING: Simulation object /Processor_Sim/R7_out was not found in the design.
+WARNING: Simulation object /Processor_Sim/Ovf was not found in the design.
+WARNING: Simulation object /Processor_Sim/Zeroes was not found in the design.
+WARNING: Simulation object /Processor_Sim/Seg_data was not found in the design.
+WARNING: Simulation object /Processor_Sim/Anode was not found in the design.
+source Add_Sub_Reg_Trf_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Add_Sub_Reg_Trf_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 1002.332 ; gain = 34.887
+current_wave_config {Processor_Sim_behav.wcfg}
+Processor_Sim_behav.wcfg
+add_wave {{/Add_Sub_Reg_Trf_Sim/A}} {{/Add_Sub_Reg_Trf_Sim/B}} {{/Add_Sub_Reg_Trf_Sim/S}} {{/Add_Sub_Reg_Trf_Sim/Op}} {{/Add_Sub_Reg_Trf_Sim/Ovf}} {{/Add_Sub_Reg_Trf_Sim/Zeroes}} 
+save_wave_config {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Add_Sub_Reg_Trf_Sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Add_Sub_Reg_Trf_Sim_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Apps/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Add_Sub_Reg_Trf_Sim_behav xil_defaultlib.Add_Sub_Reg_Trf_Sim -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Projects/NanoProcessor/NanoProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Add_Sub_Reg_Trf_Sim_behav -key {Behavioral:sim_1:Functional:Add_Sub_Reg_Trf_Sim} -tclbatch {Add_Sub_Reg_Trf_Sim.tcl} -view {D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config D:/Projects/NanoProcessor/Processor_Sim_behav.wcfg
+source Add_Sub_Reg_Trf_Sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Add_Sub_Reg_Trf_Sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.332 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  3 18:06:09 2023...
