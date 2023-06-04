@@ -51,22 +51,22 @@ architecture Behavioral of Processor is
     Component ROM_8
         PORT (
             address : in STD_LOGIC_VECTOR (2 downto 0);
-            ins : out STD_LOGIC_VECTOR (11 downto 0)
+            ins : out STD_LOGIC_VECTOR (13 downto 0)
         );
     End Component;
     
     Component Ins_Decoder
-        PORT (
-            ins_bus : in STD_LOGIC_VECTOR (11 downto 0);
-            jmp_check : in STD_LOGIC_VECTOR(3 downto 0);
-            reg_enb : out STD_LOGIC_VECTOR (2 downto 0);
-            load_sel : out STD_LOGIC;
-            im_val : out STD_LOGIC_VECTOR(3 downto 0);
-            reg_sel_1 : out STD_LOGIC_VECTOR (2 downto 0);
-            reg_sel_2 : out STD_LOGIC_VECTOR (2 downto 0);
-            add_sub_sel : out STD_LOGIC;
-            jmp : out STD_LOGIC;
-            jmp_addr : out STD_LOGIC_VECTOR(2 downto 0)
+        PORT ( ins_bus : in STD_LOGIC_VECTOR (13 downto 0);
+               jmp_check : in STD_LOGIC_VECTOR(3 downto 0);
+               reg_enb : out STD_LOGIC_VECTOR (2 downto 0);
+               load_sel : out STD_LOGIC;
+               im_val : out STD_LOGIC_VECTOR(3 downto 0);
+               reg_sel_1 : out STD_LOGIC_VECTOR (2 downto 0);
+               reg_sel_2 : out STD_LOGIC_VECTOR (2 downto 0);
+               mode_code : out STD_LOGIC_VECTOR(1 downto 0);
+               oper_code : out STD_LOGIC_VECTOR(1 downto 0);
+               jmp : out STD_LOGIC;
+               jmp_addr : out STD_LOGIC_VECTOR(2 downto 0)
         );
     End Component;
     
@@ -127,14 +127,15 @@ architecture Behavioral of Processor is
         );
     End Component;
     
-    Component Add_Subtract
-        PORT (
-            A_in : in STD_LOGIC_VECTOR (3 downto 0);
-            B_in : in STD_LOGIC_VECTOR (3 downto 0);
-            S_out : out STD_LOGIC_VECTOR (3 downto 0);
-            M : in STD_LOGIC;
-            Zeroes : out STD_LOGIC;
-            Ovf : out STD_LOGIC
+    Component ALU
+        PORT ( A : in STD_LOGIC_VECTOR (3 downto 0);
+               B : in STD_LOGIC_VECTOR (3 downto 0);
+               Mode : in STD_LOGIC_VECTOR (1 downto 0);
+               Oper : in STD_LOGIC_VECTOR (1 downto 0);
+               S : out STD_LOGIC_VECTOR (3 downto 0);
+               Comp_out : out STD_LOGIC;
+               Ovf : out STD_LOGIC;
+               Zeroes : out STD_LOGIC
         );
     End Component;
     
@@ -151,18 +152,20 @@ architecture Behavioral of Processor is
     -- ALU signals
     SIGNAL alu_out : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL mux_1, mux_2 : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL comp_out : STD_LOGIC;
     
     -- Register outputs signals
     SIGNAL R0, R1, R2, R3, R4, R5, R6, R7 : STD_LOGIC_VECTOR(3 downto 0);
     
     -- all the instruction decoder intermediate signals
-    SIGNAL jmp_flag, load_sel, add_sub_sel : STD_LOGIC;
+    SIGNAL jmp_flag, load_sel, addr_sel_in : STD_LOGIC;
+    SIGNAL mode, oper : STD_LOGIC_VECTOR(1 downto 0);
     SIGNAL jmp_addr, reg_enb, reg_sel_1, reg_sel_2 : STD_LOGIC_VECTOR(2 downto 0);
     SIGNAL im_val, jmp_check : STD_LOGIC_VECTOR(3 downto 0);
     
     
     -- all other the intermediate signals 
-    SIGNAL ins : STD_LOGIC_VECTOR(11 downto 0);
+    SIGNAL ins : STD_LOGIC_VECTOR(13 downto 0);
     SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
     SIGNAL reg_bus : STD_LOGIC_VECTOR(3 downto 0);
     
@@ -182,7 +185,7 @@ begin
     -- create program counter
     Program_Counter : Count_3 
         PORT MAP(
-            Clk => s_clk, -- s_clk
+            Clk => Clk, -- s_clk
             rst => Rst,
             Add_in => counter_in,
             Add_out => rom_addr
@@ -194,11 +197,12 @@ begin
             A_in => rom_addr,
             S_out => adder_3_out
         );
-        
+       
+   addr_sel_in <= jmp_flag OR comp_out; 
    -- create a 2-way 3-bit mux for select on of the incoming address
     Addr_Sel : Mux_2_way_3
        PORT MAP(
-        I => jmp_flag,
+        I => addr_sel_in,
         A0 => adder_3_out,
         A1 => jmp_addr,
         Y => counter_in
@@ -214,7 +218,8 @@ begin
           im_val => im_val,
           reg_sel_1 => reg_sel_1,
           reg_sel_2 => reg_sel_2,
-          add_sub_sel => add_sub_sel,
+          mode_code => mode,
+          oper_code => oper,
           jmp => jmp_flag,
           jmp_addr => jmp_addr  
         );
@@ -232,7 +237,7 @@ begin
     Reg_Bank_0 : Reg_Bank 
         PORT MAP(
             I => reg_bus,
-            Clk => s_clk, -- s_clk
+            Clk => Clk, -- s_clk
             Rst => Rst,
             Reg_En => reg_enb,
             R0 => R0,
@@ -255,14 +260,16 @@ begin
     Anode <= "1110";
     
     -- create ALU part of the processor
-    Add_Subtract_0 : Add_Subtract 
+    ALU_0 : ALU
         PORT MAP(
-            A_in => mux_2,
-            B_in => mux_1,
-            S_out => alu_out,
-            M => add_sub_sel,
+            A => mux_2,
+            B => mux_1,
+            Mode => mode,
+            Oper => oper,
+            S => alu_out,
             Ovf => Ovf,
-            Zeroes => Zeroes 
+            Zeroes => Zeroes,
+            Comp_out => comp_out
         );
         
     jmp_check <= mux_1;

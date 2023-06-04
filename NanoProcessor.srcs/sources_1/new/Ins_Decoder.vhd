@@ -32,14 +32,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Ins_Decoder is
-    Port ( ins_bus : in STD_LOGIC_VECTOR (11 downto 0);
+    Port ( ins_bus : in STD_LOGIC_VECTOR (13 downto 0);
            jmp_check : in STD_LOGIC_VECTOR(3 downto 0);
            reg_enb : out STD_LOGIC_VECTOR (2 downto 0);
            load_sel : out STD_LOGIC;
            im_val : out STD_LOGIC_VECTOR(3 downto 0);
            reg_sel_1 : out STD_LOGIC_VECTOR (2 downto 0);
            reg_sel_2 : out STD_LOGIC_VECTOR (2 downto 0);
-           add_sub_sel : out STD_LOGIC;
+           mode_code : out STD_LOGIC_VECTOR(1 downto 0);
+           oper_code : out STD_LOGIC_VECTOR(1 downto 0);
            jmp : out STD_LOGIC;
            jmp_addr : out STD_LOGIC_VECTOR(2 downto 0));
 end Ins_Decoder;
@@ -53,12 +54,13 @@ begin
     all_zeroes <= NOT(jmp_check(0)) AND NOT(jmp_check(1)) AND NOT(jmp_check(2)) AND NOT(jmp_check(3));
     
     reg_enb <= ins_bus(9 downto 7);
-    load_sel <= ins_bus(11) AND NOT(ins_bus(10));
     im_val <= ins_bus(3 downto 0);
+    load_sel <= ins_bus(11) AND NOT(ins_bus(13)) AND NOT(ins_bus(12)) AND NOT(ins_bus(10));
     reg_sel_1 <= ins_bus(9 downto 7);
     reg_sel_2 <= ins_bus(6 downto 4);
-    add_sub_sel <= NOT(ins_bus(11)) AND ins_bus(10);
-    jmp <= ins_bus(11) AND ins_bus(10) AND all_zeroes;
+    mode_code <= ins_bus(13 downto 12);
+    oper_code <= ins_bus(11 downto 10);
+    jmp <= NOT(ins_bus(13)) AND NOT(ins_bus(12)) AND ins_bus(11) AND ins_bus(10) AND all_zeroes;
     jmp_addr <= ins_bus(2 downto 0);
-
+    
 end Behavioral;

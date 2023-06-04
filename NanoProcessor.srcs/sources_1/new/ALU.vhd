@@ -37,7 +37,7 @@ entity ALU is
            Mode : in STD_LOGIC_VECTOR (1 downto 0);
            Oper : in STD_LOGIC_VECTOR (1 downto 0);
            S : out STD_LOGIC_VECTOR (3 downto 0);
-           comp_out : out STD_LOGIC;
+           Comp_out : out STD_LOGIC;
            Ovf : out STD_LOGIC;
            Zeroes : out STD_LOGIC);
 end ALU;
@@ -82,6 +82,12 @@ architecture Behavioral of ALU is
         );
     End Component;
     
+    Component Multiplicator
+        PORT ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
+               B_in : in STD_LOGIC_VECTOR (3 downto 0);
+               S_out : out STD_LOGIC_VECTOR (3 downto 0));
+    End Component;
+    
     Component ALU_Mux
         PORT ( Add_Sub_Bus : in STD_LOGIC_VECTOR (3 downto 0);
                Logic_Bus : in STD_LOGIC_VECTOR (3 downto 0);
@@ -93,10 +99,11 @@ architecture Behavioral of ALU is
     
     SIGNAL add_sub_op : STD_LOGIC_VECTOR(1 downto 0);
     SIGNAL add_sub_out, logic_out, mul_out : STD_LOGIC_VECTOR( 3 downto 0);
+    SIGNAL cmp_out : STD_LOGIC;
     
 begin
 
-    -- create the add-subtracter-register-transfer Cintrol Unit
+    -- create the add-subtracter-register-transfer Control Unit
     Add_Sub_Reg_Trf_CU_0 : Add_Sub_Reg_Trf_CU 
         PORT MAP(
             Mode => Mode,
@@ -104,6 +111,7 @@ begin
             S => add_sub_op
         );
     
+    -- create the add-subtracter-regsiter-transfer unit
     Add_Sub_Reg_Trf_0 : Add_Sub_Reg_Trf
         PORT MAP(
             A => A,
@@ -114,14 +122,17 @@ begin
             Zeroes => Zeroes
         );
         
+    -- create the comparator unit
     Comparator_0 : Comparator
         PORT MAP(
             A_in => A,
             B_in => B,
             M => Oper,
-            S_out => comp_out
+            S_out => cmp_out
         );
+    Comp_out <= cmp_out AND Mode(1) AND Mode(0);
         
+    -- create the logic unit
     Logic_Unit_0 : Logical_Unit
         PORT MAP(
             A_in => A,
@@ -129,9 +140,16 @@ begin
             M => Oper,
             S_out => logic_out
         );
-        
-   mul_out <= "1111";
+     
+   -- create the multiplicator   
+   Multiplicator_0 : Multiplicator
+    PORT MAP (
+        A_in => A,
+        B_in => B,
+        S_out => mul_out
+    );
    
+   -- create ALU multiplexer
    ALU_Mux_0 : ALU_Mux
     PORT MAP(
         Add_Sub_Bus => add_sub_out,

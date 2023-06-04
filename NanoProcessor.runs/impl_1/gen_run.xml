@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1685708519">
-  <File Type="PA-TCL" Name="Add_Subtract.tcl"/>
   <File Type="BITSTR-BMM" Name="Add_Subtract_bd.bmm"/>
-  <File Type="REPORTS-TCL" Name="Add_Subtract_reports.tcl"/>
+  <File Type="PA-TCL" Name="Add_Subtract.tcl"/>
   <File Type="OPT-DCP" Name="Add_Subtract_opt.dcp"/>
+  <File Type="REPORTS-TCL" Name="Add_Subtract_reports.tcl"/>
   <File Type="OPT-HWDEF" Name="Add_Subtract.hwdef"/>
+  <File Type="BG-BGN" Name="Add_Subtract.bgn"/>
   <File Type="PWROPT-DCP" Name="Add_Subtract_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="Add_Subtract_placed.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Add_Subtract_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="Add_Subtract.bgn"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Add_Subtract_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="Add_Subtract.bin"/>
   <File Type="PHYSOPT-DCP" Name="Add_Subtract_physopt.dcp"/>
