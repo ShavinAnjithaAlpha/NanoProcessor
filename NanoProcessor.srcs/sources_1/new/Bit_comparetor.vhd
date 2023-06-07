@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 06/03/2023 07:14:57 PM
 -- Design Name: 
--- Module Name: Bit_comparetor - Behavioral
+-- Module Name: Bit_comparator - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -48,9 +48,8 @@ begin
     -- A > B  - 10
     -- A != B - 11 
     
-    S <=    (((NOT A) AND (NOT B)) AND (NOT M(0)) AND (NOT M(1))) OR
-            (((A) AND (B)) AND (NOT M(0)) AND (NOT M(1))) OR 
-            (B AND (M(0)) AND (M(1))) OR 
+    S <=    (NOT(A XOR B) AND (NOT M(0)) AND (NOT M(1))) OR
+            ((A XOR B) AND (M(0)) AND (M(1))) OR 
             (((NOT A) AND B) AND M(0) AND (NOT M(1))) OR 
             (( A AND (NOT B)) AND (NOT M(0)) AND M(1));
     

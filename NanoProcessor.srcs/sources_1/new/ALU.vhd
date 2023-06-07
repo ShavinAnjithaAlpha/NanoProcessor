@@ -85,7 +85,8 @@ architecture Behavioral of ALU is
     Component Multiplicator
         PORT ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
                B_in : in STD_LOGIC_VECTOR (3 downto 0);
-               S_out : out STD_LOGIC_VECTOR (3 downto 0));
+               S_out : out STD_LOGIC_VECTOR (3 downto 0);
+               Ovf : out STD_LOGIC);
     End Component;
     
     Component ALU_Mux
@@ -99,7 +100,7 @@ architecture Behavioral of ALU is
     
     SIGNAL add_sub_op : STD_LOGIC_VECTOR(1 downto 0);
     SIGNAL add_sub_out, logic_out, mul_out : STD_LOGIC_VECTOR( 3 downto 0);
-    SIGNAL cmp_out : STD_LOGIC;
+    SIGNAL cmp_out, add_ovf, mul_ovf : STD_LOGIC;
     
 begin
 
@@ -118,7 +119,7 @@ begin
             B => B,
             Op => add_sub_op,
             S => add_sub_out,
-            Ovf => Ovf,
+            Ovf => add_ovf,
             Zeroes => Zeroes
         );
         
@@ -146,7 +147,8 @@ begin
     PORT MAP (
         A_in => A,
         B_in => B,
-        S_out => mul_out
+        S_out => mul_out,
+        Ovf => mul_ovf
     );
    
    -- create ALU multiplexer
@@ -159,5 +161,7 @@ begin
         Op => Oper,
         Y => S
     );
+    
+    Ovf <= add_ovf OR mul_ovf;
 
 end Behavioral;

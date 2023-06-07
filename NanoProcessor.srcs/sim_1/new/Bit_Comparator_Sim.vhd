@@ -77,7 +77,7 @@ begin
             B <= '1';
             wait for 10ns;            
             
-            -- checking if A > B
+            -- checking if A < B
             M <= "01";
             A <= '0';
             B <= '0';
@@ -95,7 +95,7 @@ begin
             B <= '1';
             wait for 10ns;            
             
-            -- checking if B > A
+            -- checking if B < A
             M <= "10";
             A <= '0';
             B <= '0';

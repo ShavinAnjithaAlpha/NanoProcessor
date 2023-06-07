@@ -39,17 +39,20 @@ architecture Behavioral of Multiplicator_Sim is
 Component Multiplicator
     PORT ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
            B_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0));
+           S_out : out STD_LOGIC_VECTOR (3 downto 0);
+           Ovf : out STD_LOGIC);
 End Component;
 
-SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
-
+    SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
+    SIGNAL Ovf : STD_LOGIC;
+    
 begin
 UUT : Multiplicator
     PORT MAP(
         A_in => A_in,
         B_in => B_in,
-        S_out => S_out);
+        S_out => S_out,
+        Ovf => Ovf);
 
     process 
     begin

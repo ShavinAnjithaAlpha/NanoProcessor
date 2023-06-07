@@ -1,6 +1,6 @@
 
 { 
-    crc :  1849472253439699574  , 
+    crc :  6974372958572543336  , 
     ccp_crc :  0  , 
     cmdline : " -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Bit_Comparator_Sim_behav xil_defaultlib.Bit_Comparator_Sim" , 
     buildDate : "Jun 14 2018" , 

@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Add_Subtract.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Add_Subtract.tcl
+EAStep vivado -log Processor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Processor.tcl

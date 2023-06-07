@@ -34,7 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Multiplicator is
     Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
            B_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0));
+           S_out : out STD_LOGIC_VECTOR (3 downto 0);
+           Ovf : out STD_LOGIC);
 end Multiplicator;
 
 architecture Behavioral of Multiplicator is
@@ -46,7 +47,7 @@ architecture Behavioral of Multiplicator is
               LSB : out STD_LOGIC);
     End Component;
 
-SIGNAL A_tmp, S_tmp1, S_tmp2 : STD_LOGIC_VECTOR(3 downto 0);
+SIGNAL A_tmp, S_tmp1, S_tmp2, last_S_out : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
 
@@ -78,6 +79,9 @@ begin
             A_in => S_tmp2,
             B_in => B_in(3),
             Q => A_in,
-            LSB => S_out(3));
+            LSB => S_out(3),
+            S_out => last_S_out);
+            
+    Ovf <= last_S_out(0) OR last_S_out(1) OR last_S_out(2);
     
 end Behavioral;

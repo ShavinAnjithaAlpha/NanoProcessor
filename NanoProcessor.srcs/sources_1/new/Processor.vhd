@@ -185,7 +185,7 @@ begin
     -- create program counter
     Program_Counter : Count_3 
         PORT MAP(
-            Clk => Clk, -- s_clk
+            Clk => s_clk, -- s_clk
             rst => Rst,
             Add_in => counter_in,
             Add_out => rom_addr
@@ -237,7 +237,7 @@ begin
     Reg_Bank_0 : Reg_Bank 
         PORT MAP(
             I => reg_bus,
-            Clk => Clk, -- s_clk
+            Clk => s_clk, -- s_clk
             Rst => Rst,
             Reg_En => reg_enb,
             R0 => R0,

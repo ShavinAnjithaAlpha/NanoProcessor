@@ -76,7 +76,7 @@ begin
             B_in <= "0110";
             wait for 10ns; 
             
-            -- this is for checking A > B
+            -- this is for checking A < B
             M <= "01";
             A_in <= "0000";
             B_in <= "1111";
@@ -94,7 +94,7 @@ begin
             B_in <= "1111";
             wait for 10ns;
             
-             -- this is for checking A < B
+             -- this is for checking A > B
             M <= "10";
             A_in <= "0000";
             B_in <= "1111";
