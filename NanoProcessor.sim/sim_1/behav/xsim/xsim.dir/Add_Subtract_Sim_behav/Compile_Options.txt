@@ -1,1 +1,0 @@
--wto "b59f4584556042b78f801fab195c5f21" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "Add_Subtract_Sim_behav" "xil_defaultlib.Add_Subtract_Sim" -log "elaborate.log" 
