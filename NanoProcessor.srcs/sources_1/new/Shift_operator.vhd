@@ -68,4 +68,5 @@ right_shift_0 : Right_shift
     S_out(1) <= ( M(0) AND tmp1(1) ) OR ( M(1) AND tmp2(1) ); 
     S_out(2) <= ( M(0) AND tmp1(2) ) OR ( M(1) AND tmp2(2) ); 
     S_out(3) <= ( M(0) AND tmp1(3) ) OR ( M(1) AND tmp2(3) ); 
+    
 end Behavioral;

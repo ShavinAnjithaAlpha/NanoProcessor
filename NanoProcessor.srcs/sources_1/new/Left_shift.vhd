@@ -39,9 +39,9 @@ end Left_shift;
 architecture Behavioral of Left_shift is
 
 begin
-    S_out(0) <= A_in(1);
-    S_out(1) <= A_in(2);
-    S_out(2) <= A_in(3);
-    S_out(3) <= '0';
-
+    S_out(3) <= A_in(2);
+    S_out(2) <= A_in(1);
+    S_out(1) <= A_in(0);
+    S_out(0) <= '0';
+    
 end Behavioral;

@@ -528,3 +528,57 @@ selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 699, 320); // n (o, ck
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: WAVEFORM_CLOSE_WCFG
 closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Processor_Sim_behav.wcfg"); // w
+selectCodeEditor("Shift_operator_Sim.vhd", 364, 131); // ce (w, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// Elapsed time: 192 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aw
+// Elapsed time: 10 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd)]", 2); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd), ALU_0 : ALU(Behavioral) (ALU.vhd)]", 11, true); // B (D, ck) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd), ALU_0 : ALU(Behavioral) (ALU.vhd)]", 11); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd), ALU_0 : ALU(Behavioral) (ALU.vhd), Comparator_0 : Comparator(Behavioral) (Comparetor.vhd)]", 14, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd), ALU_0 : ALU(Behavioral) (ALU.vhd), Comparator_0 : Comparator(Behavioral) (Comparetor.vhd)]", 14, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// Elapsed time: 267 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Processor(Behavioral) (Processor.vhd)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd)]", 2, true); // B (D, ck) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd)]", 2); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd), left_shift_0 : Left_shift(Behavioral) (Left_shift.vhd)]", 3, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd), left_shift_0 : Left_shift(Behavioral) (Left_shift.vhd)]", 3, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd), right_shift_0 : Right_shift(Behavioral) (Right_shift.vhd)]", 4, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Shift_operator(Behavioral) (Shift_operator.vhd), right_shift_0 : Right_shift(Behavioral) (Right_shift.vhd)]", 4, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("Right_shift.vhd", 148, 487); // ce (w, ck)
+typeControlKey((HResource) null, "Right_shift.vhd", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Left_shift.vhd", 2); // k (j, ck)
+selectCodeEditor("Left_shift.vhd", 191, 481); // ce (w, ck)
+typeControlKey((HResource) null, "Left_shift.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("Left_shift.vhd", 147, 435); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Right_shift.vhd", 3); // k (j, ck)
+selectCodeEditor("Right_shift.vhd", 184, 486); // ce (w, ck)
+selectCodeEditor("Right_shift.vhd", 171, 486); // ce (w, ck)
+typeControlKey((HResource) null, "Right_shift.vhd", 'v'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Left_shift.vhd", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Right_shift.vhd", 3); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Left_shift.vhd", 2); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("Left_shift.vhd", 226, 441); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Right_shift.vhd", 3); // k (j, ck)
+selectCodeEditor("Right_shift.vhd", 395, 460); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Comparetor.vhd", 1); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Shift_operator.vhd", 0); // k (j, ck)
+selectCodeEditor("Shift_operator.vhd", 455, 494); // ce (w, ck)
+selectCodeEditor("Shift_operator.vhd", 439, 491); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET

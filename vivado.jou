@@ -11,3 +11,31 @@
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/NanoProcessor.xpr}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/NanoProcessor.srcs/sources_1/new/Inverse_Operator.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/NanoProcessor.srcs/sources_1/new/Inverse_Operator.vhd}}
+export_ip_user_files -of_objects  [get_files {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/NanoProcessor.srcs/sim_1/new/Inverse_operator_Sim.vhd}}] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {{C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/NanoProcessor.srcs/sim_1/new/Inverse_operator_Sim.vhd}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Shift_operator_Sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/Processor_Sim_behav.wcfg}
+source Shift_operator_Sim.tcl
+current_wave_config {Processor_Sim_behav.wcfg}
+add_wave {{/Shift_operator_Sim/A_in}} {{/Shift_operator_Sim/S_out}} {{/Shift_operator_Sim/B_in}} {{/Shift_operator_Sim/M}} 
+save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/Processor_Sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/Processor_Sim_behav.wcfg}
+source Shift_operator_Sim.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/Processor_Sim_behav.wcfg}
+source Shift_operator_Sim.tcl
+save_wave_config {C:/Users/Tharusha/Documents/Academic Semester 02/Computer Organization and Digital Designing/Nano Processor Challenge/nano processor/NanoProcessor/Processor_Sim_behav.wcfg}
