@@ -39,6 +39,7 @@
   <File Type="ROUTE-TIMING-PB" Name="Processor_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="Processor_timing_summary_routed.rpx"/>
   <File Type="ROUTE-CLK" Name="Processor_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="Processor.vdi"/>
   <File Type="ROUTE-BUS-SKEW" Name="Processor_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Processor_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Processor_bus_skew_routed.rpx"/>
@@ -48,7 +49,6 @@
   <File Type="BITSTR-RBT" Name="Processor.rbt"/>
   <File Type="BITSTR-NKY" Name="Processor.nky"/>
   <File Type="BG-DRC" Name="Processor.drc"/>
-  <File Type="RDI-RDI" Name="Processor.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>

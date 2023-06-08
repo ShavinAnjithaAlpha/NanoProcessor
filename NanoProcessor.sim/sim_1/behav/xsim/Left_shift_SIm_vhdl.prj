@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../NanoProcessor.srcs/sources_1/new/Left_shift.vhd" \
+"../../../../NanoProcessor.srcs/sim_1/new/Left_shift_SIm.vhd" \
+
+# Do not sort compile order
+nosort

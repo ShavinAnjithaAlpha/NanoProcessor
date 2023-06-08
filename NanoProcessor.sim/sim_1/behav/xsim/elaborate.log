@@ -1,6 +1,6 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: D:/Apps/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Processor_Sim_behav xil_defaultlib.Processor_Sim -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b59f4584556042b78f801fab195c5f21 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Shift_operator_Sim_behav xil_defaultlib.Shift_operator_Sim -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,36 +10,8 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.Slow_Clk [slow_clk_default]
-Compiling architecture behavioral of entity xil_defaultlib.ROM_8 [rom_8_default]
-Compiling architecture behavioral of entity xil_defaultlib.D_FF [d_ff_default]
-Compiling architecture behavioral of entity xil_defaultlib.Count_3 [count_3_default]
-Compiling architecture behavioral of entity xil_defaultlib.HA [ha_default]
-Compiling architecture behavioral of entity xil_defaultlib.FA [fa_default]
-Compiling architecture behavioral of entity xil_defaultlib.Adder_3 [adder_3_default]
-Compiling architecture behavioral of entity xil_defaultlib.Buff_3 [buff_3_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux_2_way_3 [mux_2_way_3_default]
-Compiling architecture behavioral of entity xil_defaultlib.Ins_Decoder [ins_decoder_default]
-Compiling architecture behavioral of entity xil_defaultlib.Buff_4 [buff_4_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux_2_way_4 [mux_2_way_4_default]
-Compiling architecture behavioral of entity xil_defaultlib.Decoder_2_to_4 [decoder_2_to_4_default]
-Compiling architecture behavioral of entity xil_defaultlib.Decoder_3_to_8 [decoder_3_to_8_default]
-Compiling architecture behavioral of entity xil_defaultlib.Reg [reg_default]
-Compiling architecture behavioral of entity xil_defaultlib.Reg_Bank [reg_bank_default]
-Compiling architecture behavioral of entity xil_defaultlib.LUT_7_Display [lut_7_display_default]
-Compiling architecture behavioral of entity xil_defaultlib.Add_Sub_Reg_Trf_CU [add_sub_reg_trf_cu_default]
-Compiling architecture behavioral of entity xil_defaultlib.Add_Subtract [add_subtract_default]
-Compiling architecture behavioral of entity xil_defaultlib.Add_Sub_Reg_Trf [add_sub_reg_trf_default]
-Compiling architecture behavioral of entity xil_defaultlib.Bit_comparator [bit_comparator_default]
-Compiling architecture behavioral of entity xil_defaultlib.Comparator [comparator_default]
-Compiling architecture behavioral of entity xil_defaultlib.Bit_Logic [bit_logic_default]
-Compiling architecture behavioral of entity xil_defaultlib.Logical_Unit [logical_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.Adder_4Bit [adder_4bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.Multiplicator [multiplicator_default]
-Compiling architecture behavioral of entity xil_defaultlib.ALU_Mux [alu_mux_default]
-Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux_8_way_4 [mux_8_way_4_default]
-Compiling architecture behavioral of entity xil_defaultlib.Processor [processor_default]
-Compiling architecture behavioral of entity xil_defaultlib.processor_sim
-Built simulation snapshot Processor_Sim_behav
+Compiling architecture behavioral of entity xil_defaultlib.Left_shift [left_shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Right_shift [right_shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift_operator [shift_operator_default]
+Compiling architecture behavioral of entity xil_defaultlib.shift_operator_sim
+Built simulation snapshot Shift_operator_Sim_behav
