@@ -31,14 +31,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Shift_operator is
+entity Shifter is
     Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           B_in : in STD_LOGIC_VECTOR (3 downto 0);
            M : in STD_LOGIC_VECTOR (1 downto 0);
            S_out : out STD_LOGIC_VECTOR (3 downto 0));
-end Shift_operator;
+end Shifter;
 
-architecture Behavioral of Shift_operator is
+architecture Behavioral of Shifter is
 Component Left_shift
     PORT(
         A_in : in STD_LOGIC_VECTOR (3 downto 0);

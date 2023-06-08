@@ -126,6 +126,12 @@ begin
         Oper <= "00";
         wait for 5ns;
         
+        Oper <= "01";
+        wait for 5ns;
+        
+        Oper <= "10";
+        wait for 5ns;
+        
         wait; -- wait forever
     
     end process;

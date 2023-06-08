@@ -41,12 +41,13 @@ architecture Behavioral of ALU_Mux_Sim is
         PORT ( Add_Sub_Bus : in STD_LOGIC_VECTOR (3 downto 0);
            Logic_Bus : in STD_LOGIC_VECTOR (3 downto 0);
            Mul_Bus : in STD_LOGIC_VECTOR (3 downto 0);
+           Shift_Bus : in STD_LOGIC_VECTOR(3 downto 0);
            Mode : in STD_LOGIC_VECTOR (1 downto 0);
            Op : in STD_LOGIC_VECTOR (1 downto 0);
            Y : out STD_LOGIC_VECTOR (3 downto 0));
     End Component;
     
-    SIGNAL Add_Sub_Bus, Logic_Bus, Mul_Bus, Y : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL Add_Sub_Bus, Logic_Bus, Mul_Bus, Shift_Bus, Y : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL Mode, Op : STD_LOGIC_VECTOR(1 downto 0);
     
 begin
@@ -56,6 +57,7 @@ begin
             Add_Sub_Bus => Add_Sub_Bus,
             Logic_Bus => Logic_Bus,
             Mul_Bus => Mul_Bus,
+            Shift_Bus => Shift_Bus,
             Mode => Mode,
             Op => Op,
             Y => Y
@@ -67,6 +69,7 @@ begin
         Add_Sub_Bus <= "0011";
         Logic_Bus <= "1111";
         Mul_Bus <= "1110";
+        Shift_Bus <= "1001";
         
         -------------------------------
         Mode <= "00";
@@ -105,6 +108,12 @@ begin
         wait for 5ns;
         
         Op <= "00";
+        wait for 5ns;
+        
+        Op <= "01";
+        wait for 5ns;
+        
+        Op <= "10";
         wait for 5ns;
         
         wait; -- wait forever

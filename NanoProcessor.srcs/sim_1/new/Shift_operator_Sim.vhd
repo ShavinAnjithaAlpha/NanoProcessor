@@ -31,79 +31,67 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Shift_operator_Sim is
+entity Shifter_Sim is
 --  Port ( );
-end Shift_operator_Sim;
+end Shifter_Sim;
 
-architecture Behavioral of Shift_operator_Sim is
-Component Shift_operator
-    Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           B_in : in STD_LOGIC_VECTOR (3 downto 0);
-           M : in STD_LOGIC_VECTOR (1 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0));
-End Component;
+architecture Behavioral of Shifter_Sim is
+    Component Shifter
+        Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
+               M : in STD_LOGIC_VECTOR (1 downto 0);
+               S_out : out STD_LOGIC_VECTOR (3 downto 0));
+    End Component;
 
-SIGNAL A_in, S_out, B_in : STD_LOGIC_VECTOR (3 downto 0);
-SIGNAL M : STD_LOGIC_VECTOR (1 downto 0);
+    SIGNAL A_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
+    SIGNAL M : STD_LOGIC_VECTOR (1 downto 0);
 
 begin
-    UUT : Shift_operator
+    UUT : Shifter
         PORT MAP(
             A_in => A_in,
-            B_in => B_in,
             M => M,
             S_out => S_out);
-        -- m = 11 for left shift
+        -- m = 01 for left shift
         -- m = 10 for right shift
     process
         begin
         A_in <= "0000";
-        B_in <= "0000";
         M <= "10";
         wait for 10ns;
         
         A_in <= "0001";
-        B_in <= "0000";
         M <= "10";
         wait for 10ns;
         
         A_in <= "0010";
-        B_in <= "0000";
         M <= "10";
         wait for 10ns;
         
         A_in <= "0100";
-        B_in <= "0000";
         M <= "10";
         wait for 10ns;
         
         A_in <= "1000";
-        B_in <= "0000";
         M <= "10";
         wait for 10ns;
         
         A_in <= "0000";
-        B_in <= "0000";
         M <= "01";
         wait for 10ns;
         
         A_in <= "0001";
-        B_in <= "0000";
         M <= "01";
         wait for 10ns;
         
         A_in <= "0010";
-        B_in <= "0000";
         M <= "01";
         wait for 10ns;
         
         A_in <= "0100";
-        B_in <= "0000";
         M <= "01";   
         wait for 10ns;
         
         A_in <= "1000";
-        B_in <= "0000";
         M <= "01";        
         wait;
     end process;

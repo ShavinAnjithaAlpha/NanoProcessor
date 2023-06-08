@@ -91,17 +91,26 @@ architecture Behavioral of ALU is
                Ovf : out STD_LOGIC);
     End Component;
     
+    Component Shifter
+        PORT (
+            A_in : in STD_LOGIC_VECTOR (3 downto 0);
+            M : in STD_LOGIC_VECTOR (1 downto 0);
+            S_out : out STD_LOGIC_VECTOR (3 downto 0)
+        );
+    End Component;
+    
     Component ALU_Mux
         PORT ( Add_Sub_Bus : in STD_LOGIC_VECTOR (3 downto 0);
                Logic_Bus : in STD_LOGIC_VECTOR (3 downto 0);
                Mul_Bus : in STD_LOGIC_VECTOR (3 downto 0);
+               Shift_Bus : in STD_LOGIC_VECTOR(3 downto 0);
                Mode : in STD_LOGIC_VECTOR (1 downto 0);
                Op : in STD_LOGIC_VECTOR (1 downto 0);
                Y : out STD_LOGIC_VECTOR (3 downto 0));
     End Component;
     
     SIGNAL add_sub_op : STD_LOGIC_VECTOR(1 downto 0);
-    SIGNAL add_sub_out, logic_out, mul_out, S_out : STD_LOGIC_VECTOR( 3 downto 0);
+    SIGNAL add_sub_out, logic_out, mul_out, shift_out, S_out : STD_LOGIC_VECTOR( 3 downto 0);
     SIGNAL cmp_out, add_ovf, mul_ovf : STD_LOGIC;
     
 begin
@@ -152,6 +161,14 @@ begin
         S_out => mul_out,
         Ovf => mul_ovf
     );
+    
+   -- create the right and left shifter
+   Shifter_0 : Shifter
+        PORT MAP (
+            A_in => B,
+            M => Oper,
+            S_out => shift_out
+        );
    
    -- create ALU multiplexer
    ALU_Mux_0 : ALU_Mux
@@ -159,6 +176,7 @@ begin
         Add_Sub_Bus => add_sub_out,
         Logic_Bus => logic_out,
         Mul_Bus => mul_out,
+        Shift_Bus => shift_out,
         Mode => Mode,
         Op => Oper,
         Y => S_out
