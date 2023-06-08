@@ -2,6 +2,7 @@
 *.jou
 *.str
 *.wdf
+*.dmp
 NanoProcessor.cache/
 NanoProcessor.cache/wt/
 NanoProcessor.runs/
