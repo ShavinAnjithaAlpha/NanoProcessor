@@ -1,5 +1,5 @@
 # NanoProcessor
-### this 4-bit nano-processor can execute 14-bit instructions written in the machine language
+### this 14-bit nano-processor can execute 14-bit instructions written in the machine language
 
 #### Here the RTL eloborated design of the extended nano processor
 ![PROCESSOR_RTL](https://github.com/shavinanjitha2002/NanoProcessor/assets/85817726/e462f98a-e673-4db4-87b0-8dfb335e9dcc)
