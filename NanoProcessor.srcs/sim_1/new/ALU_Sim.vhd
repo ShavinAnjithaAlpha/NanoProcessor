@@ -45,6 +45,8 @@ architecture Behavioral of ALU_Sim is
             Oper : in STD_LOGIC_VECTOR(1 downto 0);
             Ovf : out STD_LOGIC;
             Zeroes :  out STD_LOGIC;
+            Sign : out STD_LOGIC;
+            Parity : out STD_LOGIC;
             Comp_out : out STD_LOGIC;
             S : out STD_LOGIC_VECTOR(3 downto 0)
         );
@@ -52,7 +54,7 @@ architecture Behavioral of ALU_Sim is
     
     SIGNAL A, B, S : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL Mode, Oper : STD_LOGIC_VECTOR(1 downto 0);
-    SIGNAL Ovf, Zeroes, Comp_out : STD_LOGIC;
+    SIGNAL Ovf, Zeroes, Comp_out, Sign, Parity : STD_LOGIC;
     
 begin
     
@@ -63,6 +65,8 @@ begin
             Mode => Mode,
             Oper => Oper,
             Ovf => Ovf,
+            Sign => Sign,
+            Parity => Parity,
             Zeroes => Zeroes,
             Comp_out => Comp_out,
             S => S

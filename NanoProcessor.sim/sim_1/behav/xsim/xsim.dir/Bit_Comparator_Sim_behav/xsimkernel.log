@@ -1,7 +1,0 @@
-Running: xsim.dir/Bit_Comparator_Sim_behav/xsimk.exe -simmode gui -wdb Bit_Comparator_Sim_behav.wdb -simrunnum 0 -socket 51152
-Design successfully loaded
-Design Loading Memory Usage: 5812 KB (Peak: 5812 KB)
-Design Loading CPU Usage: 30 ms
-Simulation completed
-Simulation Memory Usage: 6296 KB (Peak: 6296 KB)
-Simulation CPU Usage: 30 ms

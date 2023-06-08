@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../NanoProcessor.srcs/sources_1/new/Bit_logical_Comparetor.vhd" \
-"../../../../NanoProcessor.srcs/sim_1/new/Bit_Logical_Comparetor_Sim.vhd" \
-
-# Do not sort compile order
-nosort

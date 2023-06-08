@@ -1,7 +1,0 @@
-Running: xsim.dir/Bit_Logical_Sim_behav/xsimk.exe -simmode gui -wdb Bit_Logical_Sim_behav.wdb -simrunnum 0 -socket 63534
-Design successfully loaded
-Design Loading Memory Usage: 5848 KB (Peak: 5848 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 6332 KB (Peak: 6332 KB)
-Simulation CPU Usage: 0 ms

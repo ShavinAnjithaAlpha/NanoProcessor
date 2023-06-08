@@ -1,0 +1,8 @@
+*.log
+*.jou
+*.str
+*.wdf
+NanoProcessor.cache/
+NanoProcessor.cache/wt/
+NanoProcessor.runs/
+NanoProcessor.sim/

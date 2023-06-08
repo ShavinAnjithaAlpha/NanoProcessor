@@ -36,6 +36,8 @@ entity Processor is
            Clk : in STD_LOGIC;
            Ovf : out STD_LOGIC;
            Zeroes : out STD_LOGIC;
+           Sign : out STD_LOGIC;
+           Parity : out STD_LOGIC;
            R7_out : out STD_LOGIC_VECTOR (3 downto 0);
            Anode : out STD_LOGIC_VECTOR(3 downto 0);
            Seg_data : out STD_LOGIC_VECTOR(6 downto 0));
@@ -135,7 +137,9 @@ architecture Behavioral of Processor is
                S : out STD_LOGIC_VECTOR (3 downto 0);
                Comp_out : out STD_LOGIC;
                Ovf : out STD_LOGIC;
-               Zeroes : out STD_LOGIC
+               Zeroes : out STD_LOGIC;
+               Sign : out STD_LOGIC;
+               Parity : out STD_LOGIC
         );
     End Component;
     
@@ -269,7 +273,9 @@ begin
             S => alu_out,
             Ovf => Ovf,
             Zeroes => Zeroes,
-            Comp_out => comp_out
+            Comp_out => comp_out,
+            Sign => Sign,
+            Parity => Parity
         );
         
     jmp_check <= mux_1;

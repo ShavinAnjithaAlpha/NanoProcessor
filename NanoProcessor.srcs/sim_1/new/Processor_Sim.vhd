@@ -41,13 +41,15 @@ Component Processor
         Rst : in STD_LOGIC;
         Clk : in STD_LOGIC;
         Ovf : out STD_LOGIC;
+        Sign : out STD_LOGIC;
+        Parity : out STD_LOGIC;
         Zeroes : out STD_LOGIC;
         R7_out : out STD_LOGIC_VECTOR (3 downto 0);
         Anode : out STD_LOGIC_VECTOR(3 downto 0);
         Seg_data : out STD_LOGIC_VECTOR(6 downto 0));
 End Component;
 
-    SIGNAL Rst, Clk, Ovf, Zeroes : STD_LOGIC;
+    SIGNAL Rst, Clk, Ovf, Zeroes, Sign, Parity : STD_LOGIC;
     SIGNAL R7_out, Anode : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL Seg_data : STD_LOGIC_VECTOR(6 downto 0);
 
@@ -58,6 +60,8 @@ begin
             Clk => Clk,
             Ovf => Ovf,
             Zeroes => Zeroes,
+            Sign => Sign,
+            Parity => Parity,
             R7_out => R7_out,
             Seg_data => Seg_data,
             Anode => Anode);

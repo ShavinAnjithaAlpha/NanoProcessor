@@ -39,6 +39,8 @@ entity ALU is
            S : out STD_LOGIC_VECTOR (3 downto 0);
            Comp_out : out STD_LOGIC;
            Ovf : out STD_LOGIC;
+           Sign : out STD_LOGIC;
+           Parity : out STD_LOGIC;
            Zeroes : out STD_LOGIC);
 end ALU;
 
@@ -99,7 +101,7 @@ architecture Behavioral of ALU is
     End Component;
     
     SIGNAL add_sub_op : STD_LOGIC_VECTOR(1 downto 0);
-    SIGNAL add_sub_out, logic_out, mul_out : STD_LOGIC_VECTOR( 3 downto 0);
+    SIGNAL add_sub_out, logic_out, mul_out, S_out : STD_LOGIC_VECTOR( 3 downto 0);
     SIGNAL cmp_out, add_ovf, mul_ovf : STD_LOGIC;
     
 begin
@@ -159,9 +161,12 @@ begin
         Mul_Bus => mul_out,
         Mode => Mode,
         Op => Oper,
-        Y => S
+        Y => S_out
     );
     
+    S <= S_out;
+    Sign <= S_out(3);
+    Parity <= NOT(S_out(3) XOR S_out(2) XOR S_out(1) XOR S_out(0));
     Ovf <= add_ovf OR mul_ovf;
 
 end Behavioral;
