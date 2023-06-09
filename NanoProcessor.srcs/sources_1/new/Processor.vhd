@@ -38,7 +38,7 @@ entity Processor is
            Zeroes : out STD_LOGIC;
            Sign : out STD_LOGIC;
            Parity : out STD_LOGIC;
-           R7_out : out STD_LOGIC_VECTOR (3 downto 0);
+           R7_out : out STD_LOGIC_VECTOR (7 downto 0);
            Anode : out STD_LOGIC_VECTOR(3 downto 0);
            Seg_data : out STD_LOGIC_VECTOR(6 downto 0));
 end Processor;
@@ -53,16 +53,16 @@ architecture Behavioral of Processor is
     Component ROM_8
         PORT (
             address : in STD_LOGIC_VECTOR (2 downto 0);
-            ins : out STD_LOGIC_VECTOR (13 downto 0)
+            ins : out STD_LOGIC_VECTOR (17 downto 0)
         );
     End Component;
     
     Component Ins_Decoder
-        PORT ( ins_bus : in STD_LOGIC_VECTOR (13 downto 0);
-               jmp_check : in STD_LOGIC_VECTOR(3 downto 0);
+        PORT ( ins_bus : in STD_LOGIC_VECTOR (17 downto 0);
+               jmp_check : in STD_LOGIC_VECTOR(7 downto 0);
                reg_enb : out STD_LOGIC_VECTOR (2 downto 0);
                load_sel : out STD_LOGIC;
-               im_val : out STD_LOGIC_VECTOR(3 downto 0);
+               im_val : out STD_LOGIC_VECTOR(7 downto 0);
                reg_sel_1 : out STD_LOGIC_VECTOR (2 downto 0);
                reg_sel_2 : out STD_LOGIC_VECTOR (2 downto 0);
                mode_code : out STD_LOGIC_VECTOR(1 downto 0);
@@ -88,28 +88,28 @@ architecture Behavioral of Processor is
         ); 
     End Component;
     
-    Component Reg_Bank
+    Component Reg_Bank_8
         PORT (
-            I : in STD_LOGIC_VECTOR (3 downto 0);
+            I : in STD_LOGIC_VECTOR (7 downto 0);
             Clk : in STD_LOGIC;
             Rst : in STD_LOGIC;
             Reg_En : in STD_LOGIC_VECTOR (2 downto 0);
-            R0 : out STD_LOGIC_VECTOR (3 downto 0);
-            R1 : out STD_LOGIC_VECTOR (3 downto 0);
-            R2 : out STD_LOGIC_VECTOR (3 downto 0);
-            R3 : out STD_LOGIC_VECTOR (3 downto 0);
-            R4 : out STD_LOGIC_VECTOR (3 downto 0);
-            R5 : out STD_LOGIC_VECTOR (3 downto 0);
-            R6 : out STD_LOGIC_VECTOR (3 downto 0);
-            R7 : out STD_LOGIC_VECTOR (3 downto 0)
+            R0 : out STD_LOGIC_VECTOR (7 downto 0);
+            R1 : out STD_LOGIC_VECTOR (7 downto 0);
+            R2 : out STD_LOGIC_VECTOR (7 downto 0);
+            R3 : out STD_LOGIC_VECTOR (7 downto 0);
+            R4 : out STD_LOGIC_VECTOR (7 downto 0);
+            R5 : out STD_LOGIC_VECTOR (7 downto 0);
+            R6 : out STD_LOGIC_VECTOR (7 downto 0);
+            R7 : out STD_LOGIC_VECTOR (7 downto 0)
         );
     End Component;
     
-    Component Mux_8_way_4
+    Component Mux_8_way_8
         PORT (
             Reg_Sel : in STD_LOGIC_VECTOR (2 downto 0);
-            A0, A1, A2, A3, A4, A5, A6, A7 : in STD_LOGIC_VECTOR(3 downto 0);
-            Y : out STD_LOGIC_VECTOR (3 downto 0)
+            A0, A1, A2, A3, A4, A5, A6, A7 : in STD_LOGIC_VECTOR(7 downto 0);
+            Y : out STD_LOGIC_VECTOR (7 downto 0)
         );
     End Component;
     
@@ -121,20 +121,20 @@ architecture Behavioral of Processor is
         );
     End Component;
     
-    Component Mux_2_way_4
+    Component Mux_2_way_8
         PORT (
             I : in STD_LOGIC;
-            A0, A1 : in STD_LOGIC_VECTOR (3 downto 0);
-            Y : out STD_LOGIC_VECTOR (3 downto 0)
+            A0, A1 : in STD_LOGIC_VECTOR (7 downto 0);
+            Y : out STD_LOGIC_VECTOR (7 downto 0)
         );
     End Component;
     
     Component ALU
-        PORT ( A : in STD_LOGIC_VECTOR (3 downto 0);
-               B : in STD_LOGIC_VECTOR (3 downto 0);
+        PORT ( A : in STD_LOGIC_VECTOR (7 downto 0);
+               B : in STD_LOGIC_VECTOR (7 downto 0);
                Mode : in STD_LOGIC_VECTOR (1 downto 0);
                Oper : in STD_LOGIC_VECTOR (1 downto 0);
-               S : out STD_LOGIC_VECTOR (3 downto 0);
+               S : out STD_LOGIC_VECTOR (7 downto 0);
                Comp_out : out STD_LOGIC;
                Ovf : out STD_LOGIC;
                Zeroes : out STD_LOGIC;
@@ -154,24 +154,24 @@ architecture Behavioral of Processor is
     SIGNAL s_clk : STD_LOGIC;
     
     -- ALU signals
-    SIGNAL alu_out : STD_LOGIC_VECTOR(3 downto 0);
-    SIGNAL mux_1, mux_2 : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL alu_out : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL mux_1, mux_2 : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL comp_out : STD_LOGIC;
     
     -- Register outputs signals
-    SIGNAL R0, R1, R2, R3, R4, R5, R6, R7 : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL R0, R1, R2, R3, R4, R5, R6, R7 : STD_LOGIC_VECTOR(7 downto 0);
     
     -- all the instruction decoder intermediate signals
     SIGNAL jmp_flag, load_sel, addr_sel_in : STD_LOGIC;
     SIGNAL mode, oper : STD_LOGIC_VECTOR(1 downto 0);
     SIGNAL jmp_addr, reg_enb, reg_sel_1, reg_sel_2 : STD_LOGIC_VECTOR(2 downto 0);
-    SIGNAL im_val, jmp_check : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL im_val, jmp_check : STD_LOGIC_VECTOR(7 downto 0);
     
     
     -- all other the intermediate signals 
-    SIGNAL ins : STD_LOGIC_VECTOR(13 downto 0);
+    SIGNAL ins : STD_LOGIC_VECTOR(17 downto 0);
     SIGNAL rom_addr, counter_in, adder_3_out : STD_LOGIC_VECTOR(2 downto 0);
-    SIGNAL reg_bus : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL reg_bus : STD_LOGIC_VECTOR(7 downto 0);
     
 begin
     Slow_Clk_0 : Slow_Clk
@@ -229,7 +229,7 @@ begin
         );
         
     -- create the 2-way 4-bit mux for select the value from either ALU or immediate value
-    Val_Sel : Mux_2_way_4
+    Val_Sel : Mux_2_way_8
         PORT MAP(
             I => load_sel,
             A0 => alu_out,
@@ -238,7 +238,7 @@ begin
         );
         
     -- create register bank for the processor
-    Reg_Bank_0 : Reg_Bank 
+    Reg_Bank_0 : Reg_Bank_8 
         PORT MAP(
             I => reg_bus,
             Clk => s_clk, -- s_clk
@@ -258,7 +258,7 @@ begin
     
     LUT_7_Display_0 : LUT_7_Display
         PORT MAP(
-            address => R7,
+            address => R7(3 downto 0),
             data => Seg_data
         );
     Anode <= "1110";
@@ -281,7 +281,7 @@ begin
     jmp_check <= mux_1;
     
     -- create ALU values selecter multiplexers
-    ALU_Mux_1 : Mux_8_way_4 
+    ALU_Mux_1 : Mux_8_way_8 
         PORT MAP(
             Reg_Sel => reg_sel_1,
             A0 => R0,
@@ -295,7 +295,7 @@ begin
             Y => mux_1
         );
     
-    ALU_Mux_2 : Mux_8_way_4
+    ALU_Mux_2 : Mux_8_way_8
         PORT MAP(
             Reg_Sel => reg_sel_2,
             A0 => R0,

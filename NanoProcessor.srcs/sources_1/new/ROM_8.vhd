@@ -33,23 +33,23 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ROM_8 is
     Port ( address : in STD_LOGIC_VECTOR (2 downto 0);
-           ins : out STD_LOGIC_VECTOR (13 downto 0));
+           ins : out STD_LOGIC_VECTOR (17 downto 0));
 end ROM_8;
 
 architecture Behavioral of ROM_8 is
 
     
-    type rom_type is array (0 to 7) of std_logic_vector(13 downto 0);
+    type rom_type is array (0 to 7) of std_logic_vector(17 downto 0);
         
         -- shifting program
-    signal mem_8 : rom_type := (    "00101110001000",
-                                    "10101110000000",
-                                    "00101110000001",
-                                    "10011110000000",
-                                    "00000000000000",
-                                    "00000000000000",
-                                    "00000000000000",
-                                    "00000000000000"
+    signal mem_8 : rom_type := (    "001011100011111111",
+                                    "001000100000000001",
+                                    "000100100000000000",
+                                    "000011100100000000",
+                                    "001111100000000111",
+                                    "001100000000000011",
+                                    "000000000000000000",
+                                    "000000000000000000"
                                     
     );
     -- assembly code for above program

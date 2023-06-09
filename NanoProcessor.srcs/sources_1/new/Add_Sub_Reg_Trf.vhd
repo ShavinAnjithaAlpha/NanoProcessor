@@ -32,10 +32,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Add_Sub_Reg_Trf is
-    Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
-           B : in STD_LOGIC_VECTOR (3 downto 0);
+    Port ( A : in STD_LOGIC_VECTOR (7 downto 0);
+           B : in STD_LOGIC_VECTOR (7 downto 0);
            Op : in STD_LOGIC_VECTOR (1 downto 0);
-           S : out STD_LOGIC_VECTOR (3 downto 0);
+           S : out STD_LOGIC_VECTOR (7 downto 0);
            Ovf : out STD_LOGIC;
            Zeroes : out STD_LOGIC);
 end Add_Sub_Reg_Trf;
@@ -44,24 +44,24 @@ architecture Behavioral of Add_Sub_Reg_Trf is
 
     Component Add_Subtract -- adder subtractir unit
         PORT (
-            A_in : in STD_LOGIC_VECTOR (3 downto 0);
-            B_in : in STD_LOGIC_VECTOR (3 downto 0);
-            S_out : out STD_LOGIC_VECTOR (3 downto 0);
+            A_in : in STD_LOGIC_VECTOR (7 downto 0);
+            B_in : in STD_LOGIC_VECTOR (7 downto 0);
+            S_out : out STD_LOGIC_VECTOR (7 downto 0);
             M : in STD_LOGIC; -- operation code
             Zeroes : out STD_LOGIC; -- zero flag
             Ovf : out STD_LOGIC -- overflow flag
         );
     End Component;
     
-    Component Buff_4 -- tri state buffers
+    Component Buff_8 -- tri state buffers
         PORT (
-            D : in STD_LOGIC_VECTOR(3 downto 0);
+            D : in STD_LOGIC_VECTOR(7 downto 0);
             Ctrl : in STD_LOGIC;
-            Y : out STD_LOGIC_VECTOR(3 downto 0)
+            Y : out STD_LOGIC_VECTOR(7 downto 0)
         );
     End Component;
     
-    SIGNAL add_sub_out : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL add_sub_out : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL add_sub_op, A_ctrl, B_ctrl : STD_LOGIC;
     
 begin
@@ -76,9 +76,9 @@ begin
             Zeroes => Zeroes
         );
       
-    -- tri state buffers with their constrol signal to control the output lines  
+    -- tri state buffers with their control signal to control the output lines  
     add_sub_op <= NOT(Op(1));
-    Add_Subtract_Line : Buff_4
+    Add_Subtract_Line : Buff_8
         PORT MAP(
             D => add_sub_out,
             Ctrl => add_sub_op,
@@ -86,7 +86,7 @@ begin
         );
         
     A_ctrl <= Op(1) AND Op(0);
-    A_buff : Buff_4
+    A_buff : Buff_8
         PORT MAP(
             D => A,
             Ctrl => A_ctrl,
@@ -94,7 +94,7 @@ begin
         );
         
     B_ctrl <= Op(1) AND NOT(Op(0));
-    B_buff : Buff_4
+    B_buff : Buff_8
         PORT MAP(
             D => B,
             Ctrl => B_ctrl,
