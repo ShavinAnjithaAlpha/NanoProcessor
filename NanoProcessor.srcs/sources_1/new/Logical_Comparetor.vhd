@@ -32,9 +32,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Logical_Unit is
-    Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           B_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0);
+    Port ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
+           B_in : in STD_LOGIC_VECTOR (7 downto 0);
+           S_out : out STD_LOGIC_VECTOR (7 downto 0);
            M : in STD_LOGIC_VECTOR (1 downto 0));
 end Logical_Unit;
 
@@ -76,6 +76,34 @@ begin
             A => A_in(3),
             B => B_in(3),
             S => S_out(3),
+            M => M);    
+                    
+    BLC_4 : Bit_Logic
+        PORT MAP(
+            A => A_in(4),
+            B => B_in(4),
+            S => S_out(4),
+            M => M); 
+                       
+    BLC_5 : Bit_Logic
+        PORT MAP(
+            A => A_in(5),
+            B => B_in(5),
+            S => S_out(5),
+            M => M);   
+                     
+    BLC_6 : Bit_Logic
+        PORT MAP(
+            A => A_in(6),
+            B => B_in(6),
+            S => S_out(6),
+            M => M);  
+                      
+    BLC_7 : Bit_Logic
+        PORT MAP(
+            A => A_in(7),
+            B => B_in(7),
+            S => S_out(7),
             M => M);
 
 end Behavioral;

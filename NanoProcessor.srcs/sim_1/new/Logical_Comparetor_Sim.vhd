@@ -38,13 +38,13 @@ end Logical_Unit_Sim;
 architecture Behavioral of Logical_Unit_Sim is
 Component Logical_Unit
     PORT(
-        A_in : in STD_LOGIC_VECTOR (3 downto 0);
-        B_in : in STD_LOGIC_VECTOR (3 downto 0);
-        S_out : out STD_LOGIC_VECTOR (3 downto 0);
+        A_in : in STD_LOGIC_VECTOR (7 downto 0);
+        B_in : in STD_LOGIC_VECTOR (7 downto 0);
+        S_out : out STD_LOGIC_VECTOR (7 downto 0);
         M : in STD_LOGIC_VECTOR (1 downto 0));
 End Component;
 
-SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR(3 downto 0);
+SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR(7 downto 0);
 SIGNAL M : STD_LOGIC_VECTOR(1 downto 0);
 
 begin
@@ -58,71 +58,71 @@ begin
     process
     begin
         M <= "00";
-        A_in <= "1111";
-        B_in <= "1010";
+        A_in <= "11111111";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "0101";
-        B_in <= "1111";
+        A_in <= "01010101";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0000";
-        B_in <= "1010";
+        A_in <= "00000000";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "1010";
-        B_in <= "0101";
+        A_in <= "10101010";
+        B_in <= "01010101";
         wait for 10ns;        
         
         M <= "01";
-        A_in <= "1111";
-        B_in <= "1010";
+        A_in <= "11111111";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "0101";
-        B_in <= "1111";
+        A_in <= "01010101";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0000";
-        B_in <= "1010";
+        A_in <= "00000000";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "1010";
-        B_in <= "0101";
+        A_in <= "10101010";
+        B_in <= "01010101";
         wait for 10ns;        
         
         M <= "10";
-        A_in <= "1111";
-        B_in <= "1010";
+        A_in <= "11111111";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "0101";
-        B_in <= "1111";
+        A_in <= "01010101";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0000";
-        B_in <= "1010";
+        A_in <= "00000000";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "1010";
-        B_in <= "0101";
+        A_in <= "10101010";
+        B_in <= "01010101";
         wait for 10ns;        
         
         M <= "11";
-        A_in <= "1111";
-        B_in <= "1010";
+        A_in <= "11111111";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "0101";
-        B_in <= "1111";
+        A_in <= "01010101";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0000";
-        B_in <= "1010";
+        A_in <= "00000000";
+        B_in <= "10101010";
         wait for 10ns;
         
-        A_in <= "1010";
-        B_in <= "0101";
+        A_in <= "10101010";
+        B_in <= "01010101";
         wait;        
         
     end process;
