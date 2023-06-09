@@ -37,13 +37,13 @@ end Multiplicator_Sim;
 
 architecture Behavioral of Multiplicator_Sim is
 Component Multiplicator
-    PORT ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           B_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0);
+    PORT ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
+           B_in : in STD_LOGIC_VECTOR (7 downto 0);
+           S_out : out STD_LOGIC_VECTOR (7 downto 0);
            Ovf : out STD_LOGIC);
 End Component;
 
-    SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
+    SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR (7 downto 0);
     SIGNAL Ovf : STD_LOGIC;
     
 begin
@@ -56,24 +56,24 @@ UUT : Multiplicator
 
     process 
     begin
-        A_in <= "0000";
-        B_in <= "1111";
+        A_in <= "00000000";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0001";
-        B_in <= "1111";
+        A_in <= "00000001";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0010";
-        B_in <= "1111";
+        A_in <= "00000010";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "0100";
-        B_in <= "1111";
+        A_in <= "00000100";
+        B_in <= "11111111";
         wait for 10ns;
         
-        A_in <= "1000";
-        B_in <= "1111";
+        A_in <= "00001000";
+        B_in <= "11111111";
         wait;
     
     end process;
