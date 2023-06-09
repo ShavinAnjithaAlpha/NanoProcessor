@@ -3,44 +3,38 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="Add_Subtract_Sim_behav.wdb" id="1">
+      <db_ref path="Comparator_Sim_behav.wdb" id="1">
          <top_modules>
-            <top_module name="Add_Subtract_Sim" />
+            <top_module name="Comparator_Sim" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1147003963fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="117500000fs"></ZoomStartTime>
+      <ZoomEndTime time="170450001fs"></ZoomEndTime>
+      <Cursor1Time time="117950000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="100"></NameColumnWidth>
-      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+      <NameColumnWidth column_width="97"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wvobject fp_name="/Add_Subtract_Sim/A_in" type="array">
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/Comparator_Sim/A_in" type="array">
       <obj_property name="ElementShortName">A_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">A_in[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/Add_Subtract_Sim/B_in" type="array">
+   <wvobject fp_name="/Comparator_Sim/B_in" type="array">
       <obj_property name="ElementShortName">B_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">B_in[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/Add_Subtract_Sim/S_out" type="array">
-      <obj_property name="ElementShortName">S_out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">S_out[7:0]</obj_property>
+   <wvobject fp_name="/Comparator_Sim/M" type="array">
+      <obj_property name="ElementShortName">M[1:0]</obj_property>
+      <obj_property name="ObjectShortName">M[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Add_Subtract_Sim/M" type="logic">
-      <obj_property name="ElementShortName">M</obj_property>
-      <obj_property name="ObjectShortName">M</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Add_Subtract_Sim/Ovf" type="logic">
-      <obj_property name="ElementShortName">Ovf</obj_property>
-      <obj_property name="ObjectShortName">Ovf</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Add_Subtract_Sim/Zeroes" type="logic">
-      <obj_property name="ElementShortName">Zeroes</obj_property>
-      <obj_property name="ObjectShortName">Zeroes</obj_property>
+   <wvobject fp_name="/Comparator_Sim/S_out" type="logic">
+      <obj_property name="ElementShortName">S_out</obj_property>
+      <obj_property name="ObjectShortName">S_out</obj_property>
    </wvobject>
 </wave_config>
