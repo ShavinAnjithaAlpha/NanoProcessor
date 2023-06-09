@@ -37,11 +37,11 @@ end Left_shift_SIm;
 
 architecture Behavioral of Left_shift_SIm is
 Component Left_shift
-    Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0));
+    Port ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
+           S_out : out STD_LOGIC_VECTOR (7 downto 0));
 End Component;
 
-SIGNAL A_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
+SIGNAL A_in, S_out : STD_LOGIC_VECTOR (7 downto 0);
 
 begin
     UUT : Left_shift
@@ -51,19 +51,19 @@ begin
         
     process
         begin
-        A_in <= "0000";
+        A_in <= "00000001";
         wait for 10ns;
         
-        A_in <= "0001";
+        A_in <= "00010100";
         wait for 10ns;
         
-        A_in <= "0010";
+        A_in <= "00100001";
         wait for 10ns;
         
-        A_in <= "0100";
+        A_in <= "01001010";
         wait for 10ns;
         
-        A_in <= "1000";
+        A_in <= "10000011";
         wait;
     end process;
 

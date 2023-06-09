@@ -37,12 +37,12 @@ end Shifter_Sim;
 
 architecture Behavioral of Shifter_Sim is
     Component Shifter
-        Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
+        Port ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
                M : in STD_LOGIC_VECTOR (1 downto 0);
-               S_out : out STD_LOGIC_VECTOR (3 downto 0));
+               S_out : out STD_LOGIC_VECTOR (7 downto 0));
     End Component;
 
-    SIGNAL A_in, S_out : STD_LOGIC_VECTOR (3 downto 0);
+    SIGNAL A_in, S_out : STD_LOGIC_VECTOR (7 downto 0);
     SIGNAL M : STD_LOGIC_VECTOR (1 downto 0);
 
 begin
@@ -55,43 +55,43 @@ begin
         -- m = 10 for right shift
     process
         begin
-        A_in <= "0000";
+        A_in <= "00000001";
         M <= "10";
         wait for 10ns;
         
-        A_in <= "0001";
+        A_in <= "00000011";
         M <= "10";
         wait for 10ns;
         
-        A_in <= "0010";
+        A_in <= "00001010";
         M <= "10";
         wait for 10ns;
         
-        A_in <= "0100";
+        A_in <= "00010100";
         M <= "10";
         wait for 10ns;
         
-        A_in <= "1000";
+        A_in <= "00011000";
         M <= "10";
         wait for 10ns;
         
-        A_in <= "0000";
+        A_in <= "00010000";
         M <= "01";
         wait for 10ns;
         
-        A_in <= "0001";
+        A_in <= "00000101";
         M <= "01";
         wait for 10ns;
         
-        A_in <= "0010";
+        A_in <= "00000110";
         M <= "01";
         wait for 10ns;
         
-        A_in <= "0100";
+        A_in <= "01000100";
         M <= "01";   
         wait for 10ns;
         
-        A_in <= "1000";
+        A_in <= "10001000";
         M <= "01";        
         wait;
     end process;

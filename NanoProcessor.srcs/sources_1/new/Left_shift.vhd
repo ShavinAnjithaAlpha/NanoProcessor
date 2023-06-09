@@ -32,13 +32,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Left_shift is
-    Port ( A_in : in STD_LOGIC_VECTOR (3 downto 0);
-           S_out : out STD_LOGIC_VECTOR (3 downto 0));
+    Port ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
+           S_out : out STD_LOGIC_VECTOR (7 downto 0));
 end Left_shift;
 
 architecture Behavioral of Left_shift is
 
 begin
+    S_out(7) <= A_in(6);
+    S_out(6) <= A_in(5);
+    S_out(5) <= A_in(4);
+    S_out(4) <= A_in(3);
     S_out(3) <= A_in(2);
     S_out(2) <= A_in(1);
     S_out(1) <= A_in(0);
