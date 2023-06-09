@@ -38,16 +38,16 @@ end Add_Subtract_Sim;
 architecture Behavioral of Add_Subtract_Sim is
 Component Add_Subtract
     PORT(
-        A_in : in STD_LOGIC_VECTOR (3 downto 0);
-        B_in : in STD_LOGIC_VECTOR (3 downto 0);
-        S_out : out STD_LOGIC_VECTOR (3 downto 0);
+        A_in : in STD_LOGIC_VECTOR (7 downto 0);
+        B_in : in STD_LOGIC_VECTOR (7 downto 0);
+        S_out : out STD_LOGIC_VECTOR (7 downto 0);
         M : in STD_LOGIC;
         Ovf : out STD_LOGIC;
         Zeroes : out STD_LOGIC
     );
 End Component;
 
-    SIGNAL A_in, B_in, S_out: STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL A_in, B_in, S_out: STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL M, Ovf, Zeroes: STD_LOGIC;
 
 begin
@@ -66,32 +66,32 @@ begin
     begin
         M <= '0';
     
-        A_in <= "0000";
-        B_in <= "0000";
+        A_in <= "00000000";
+        B_in <= "00000000";
         wait for 10ns;
         
-        A_in <= "0001";
-        B_in <= "0001";
+        A_in <= "00000001";
+        B_in <= "00000001";
         wait for 10ns;
         
-        A_in <= "0010";
-        B_in <= "0010";
+        A_in <= "00000010";
+        B_in <= "00000010";
         wait for 10ns;    
         
-        A_in <= "0100";
-        B_in <= "0100";
+        A_in <= "00000100";
+        B_in <= "00000100";
         wait for 10ns;    
         
-        A_in <= "0100";
-        B_in <= "0100";
+        A_in <= "00000100";
+        B_in <= "00000100";
         wait for 10ns;    
         
-        A_in <= "0110";
-        B_in <= "1100";
+        A_in <= "00000110";
+        B_in <= "00001100";
         wait for 10ns;    
         
-        A_in <= "0111";
-        B_in <= "1000";
+        A_in <= "00000111";
+        B_in <= "10000000";
         wait for 10ns;
     
     
