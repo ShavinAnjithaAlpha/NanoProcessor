@@ -75,19 +75,19 @@ architecture Behavioral of ALU is
         );
     End Component;
     
-    Component Comparator
+    Component Comparator_8
         PORT (
-            A_in : in STD_LOGIC_VECTOR(7 downto 0);
-            B_in : in STD_LOGIC_VECTOR(7 downto 0);
-            M : in STD_LOGIC_VECTOR(1 downto 0);
-            S_out : out STD_LOGIC
+            A : in STD_LOGIC_VECTOR(7 downto 0);
+            B : in STD_LOGIC_VECTOR(7 downto 0);
+            Oper : in STD_LOGIC_VECTOR(1 downto 0);
+            S : out STD_LOGIC
         );
     End Component;
     
     Component Multiplicator
-        PORT ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
-               B_in : in STD_LOGIC_VECTOR (7 downto 0);
-               S_out : out STD_LOGIC_VECTOR (7 downto 0);
+        PORT ( A : in STD_LOGIC_VECTOR (7 downto 0);
+               B : in STD_LOGIC_VECTOR (7 downto 0);
+               S : out STD_LOGIC_VECTOR (7 downto 0);
                Ovf : out STD_LOGIC);
     End Component;
     
@@ -135,12 +135,12 @@ begin
         );
         
     -- create the comparator unit
-    Comparator_0 : Comparator
+    Comparator_0 : Comparator_8
         PORT MAP(
-            A_in => A,
-            B_in => B,
-            M => Oper,
-            S_out => cmp_out
+            A => A,
+            B => B,
+            Oper => Oper,
+            S => cmp_out
         );
     Comp_out <= cmp_out AND Mode(1) AND Mode(0);
         
@@ -156,9 +156,9 @@ begin
    -- create the multiplicator   
    Multiplicator_0 : Multiplicator
     PORT MAP (
-        A_in => A,
-        B_in => B,
-        S_out => mul_out,
+        A => A,
+        B => B,
+        S => mul_out,
         Ovf => mul_ovf
     );
     

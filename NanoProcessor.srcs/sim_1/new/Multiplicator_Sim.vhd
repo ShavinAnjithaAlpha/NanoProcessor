@@ -37,43 +37,56 @@ end Multiplicator_Sim;
 
 architecture Behavioral of Multiplicator_Sim is
 Component Multiplicator
-    PORT ( A_in : in STD_LOGIC_VECTOR (7 downto 0);
-           B_in : in STD_LOGIC_VECTOR (7 downto 0);
-           S_out : out STD_LOGIC_VECTOR (7 downto 0);
+    PORT ( A : in STD_LOGIC_VECTOR (7 downto 0);
+           B : in STD_LOGIC_VECTOR (7 downto 0);
+           S : out STD_LOGIC_VECTOR (7 downto 0);
            Ovf : out STD_LOGIC);
 End Component;
 
-    SIGNAL A_in, B_in, S_out : STD_LOGIC_VECTOR (7 downto 0);
+    SIGNAL A, B, S : STD_LOGIC_VECTOR (7 downto 0);
     SIGNAL Ovf : STD_LOGIC;
     
 begin
 UUT : Multiplicator
     PORT MAP(
-        A_in => A_in,
-        B_in => B_in,
-        S_out => S_out,
+        A => A,
+        B => B,
+        S => S,
         Ovf => Ovf);
 
     process 
     begin
-        A_in <= "00000000";
-        B_in <= "11111111";
+        A <= "00000000";
+        B <= "11111111";
         wait for 10ns;
         
-        A_in <= "00000001";
-        B_in <= "11111111";
+        A <= "00000001";
+        B <= "11111111";
         wait for 10ns;
         
-        A_in <= "00000010";
-        B_in <= "11111111";
+        A <= "00000010";
+        B <= "11111111";
         wait for 10ns;
         
-        A_in <= "00000100";
-        B_in <= "11111111";
+        A <= "00000100";
+        B <= "11111111";
         wait for 10ns;
         
-        A_in <= "00001000";
-        B_in <= "11111111";
+        A <= "00001000";
+        B <= "11111111";
+        
+        A <= "00011011";
+        B <= "00000011";
+        wait for 5ns;
+        
+        A <= "00001001";
+        B <= "00001000";
+        wait for 5ns; 
+        
+        A <= "00010111";
+        B <= "00001000";
+        wait for 5ns;
+        
         wait;
     
     end process;

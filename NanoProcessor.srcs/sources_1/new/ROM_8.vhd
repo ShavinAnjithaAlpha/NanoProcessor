@@ -42,21 +42,23 @@ architecture Behavioral of ROM_8 is
     type rom_type is array (0 to 7) of std_logic_vector(17 downto 0);
         
         -- shifting program
-    signal mem_8 : rom_type := (    "001011100011111111",
-                                    "001000100000000001",
-                                    "000100100000000000",
-                                    "000011100100000000",
-                                    "001111100000000111",
-                                    "001100000000000011",
+    signal mem_8 : rom_type := (    "001011100000000001",
+                                    "001000100000000011",
+                                    "001001000011110011",
+                                    "100011100100000000",
+                                    "111111101000000011",
+                                    "001100000000000111",
                                     "000000000000000000",
                                     "000000000000000000"
                                     
     );
     -- assembly code for above program
---                                        MOVI R7, 8
---                                        RSHIFT R7
 --                                        MOVI R7, 1
---                                        LSHIFT R7
+--                                        MOVI R1, 3
+--                                        MOVI R2, F3
+--                                        MUL R7, R1
+--                                        JNER R7, R2, 3
+--                                        JZR R0, 7
     
     -- another assembly program to confirm the functionality of the processor
     -- 1. Count Down Program
