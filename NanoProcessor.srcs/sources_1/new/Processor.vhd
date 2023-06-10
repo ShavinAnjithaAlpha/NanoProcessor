@@ -145,8 +145,11 @@ architecture Behavioral of Processor is
     
     Component LUT_7_Display
         Port ( 
-                address : in STD_LOGIC_VECTOR (3 downto 0);
-                data : out STD_LOGIC_VECTOR (6 downto 0)
+                clock : STD_LOGIC;
+                reset : STD_LOGIC;
+                address : in STD_LOGIC_VECTOR (7 downto 0);
+                LED_out : out STD_LOGIC_VECTOR (6 downto 0);
+                Anode_Out : out STD_LOGIC_VECTOR(3 downto 0)
             );
     End Component;
     
@@ -258,10 +261,13 @@ begin
     
     LUT_7_Display_0 : LUT_7_Display
         PORT MAP(
-            address => R7(3 downto 0),
-            data => Seg_data
+            clock => Clk,
+            reset => Rst, 
+            address => R7(7 downto 0),
+            LED_out => Seg_data,
+            Anode_Out => Anode
         );
-    Anode <= "1110";
+--    Anode <= "1110";
     
     -- create ALU part of the processor
     ALU_0 : ALU
