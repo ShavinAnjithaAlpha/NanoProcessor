@@ -42,12 +42,12 @@ Install the Xilinx Vivado Hardware Design Software
 
 ### Installation
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git](https://github.com/shavinanjitha2002/NanoProcessor
    ```
 
-4. Open the project with Vivado by double clicking the NanoProcessor.xpr file
+2. Open the project with Vivado by double clicking the NanoProcessor.xpr file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
